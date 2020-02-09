@@ -1,19 +1,26 @@
 plugins {
-    java
+  java
 }
 
 group = "com.github.cc3002"
 version = "0.1-RELEASE"
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-    testCompile(group = "org.junit.jupiter", name = "junit-jupiter-api", version = "5.6.0")
+  // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+  testCompile(group = "org.junit.jupiter", name = "junit-jupiter-api",
+              version = "5.6.0")
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_11
+  sourceCompatibility = JavaVersion.VERSION_11
+}
+
+tasks {
+  test {
+    useJUnitPlatform()
+  }
 }
