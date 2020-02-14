@@ -13,7 +13,6 @@ repositories {
 
 dependencies {
   implementation(group = "org.openjfx", name = "javafx", version = "14-ea+6", ext = "pom")
-  // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
   testImplementation(group = "org.junit.jupiter", name = "junit-jupiter-api",
                      version = "5.6.0")
 }

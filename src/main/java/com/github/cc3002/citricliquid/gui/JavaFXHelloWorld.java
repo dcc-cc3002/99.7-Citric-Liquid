@@ -1,4 +1,4 @@
-package com.github.cc3002metodologias.citricliquid.gui;
+package com.github.cc3002.citricliquid.gui;
 
 import javafx.application.Application;
 import javafx.geometry.Pos;
