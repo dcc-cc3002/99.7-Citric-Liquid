@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Test suite for the players of the game.
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater Muñoz</a>.
- * @version 1.0.5-b1
+ * @version 1.0.5-b2
  * @since 1.0
  */
 public class PlayerTest {
