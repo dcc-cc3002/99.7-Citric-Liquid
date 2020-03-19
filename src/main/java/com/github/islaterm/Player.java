@@ -4,7 +4,7 @@ package com.github.islaterm;
  * This class represents a character in the game 99.7% Citric Liquid.
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater Muñoz</a>.
- * @version 1.0.5-b2
+ * @version 1.0.5-b3
  * @since 1.0
  */
 public class Player {
@@ -14,6 +14,7 @@ public class Player {
   private int atk;
   private int def;
   private int evd;
+  private int norma;
 
   /**
    * Creates a new character.
@@ -36,6 +37,7 @@ public class Player {
     this.atk = atk;
     this.def = def;
     this.evd = evd;
+    norma = 1;
   }
 
   /**
@@ -83,5 +85,13 @@ public class Player {
 
   private void setEvd(final int evd) {
     this.evd = evd;
+  }
+
+  public int getNorma() {
+    return norma;
+  }
+
+  public void normaClear() {
+
   }
 }
