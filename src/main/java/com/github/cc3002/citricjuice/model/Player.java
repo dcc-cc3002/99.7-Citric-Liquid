@@ -3,9 +3,11 @@ package com.github.cc3002.citricjuice.model;
 import java.util.Random;
 
 /**
+ * This class represents a player in the game 99.7% Citric Liquid.
+ *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @since
+ * @since 1.0
  */
 public class Player {
   private final Random random;

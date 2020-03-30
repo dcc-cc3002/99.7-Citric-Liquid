@@ -2,6 +2,7 @@ package com.github.cc3002.citricjuice.model.board;
 
 import com.github.cc3002.citricjuice.model.Player;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -11,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * @author <a href="mailto:ignacio.slater@ug.cuhile.cl">Ignacio Slater Muñoz</a>.
+ * @author <a href="mailto:ignacio.slater@ug.cuhile.cl">Ignacio Slater
+ *     Muñoz</a>.
  * @version 1.0.2.2
  * @since 1.0
  */
@@ -22,7 +24,7 @@ class PanelTest {
   private Panel testDropPanel;
   private Panel testEncounterPanel;
   private Panel testBossPanel;
-  private Player testPlayer;
+  private Player suguri;
   private long testSeed;
 
   @BeforeEach
@@ -34,6 +36,7 @@ class PanelTest {
     testHomePanel = new Panel(PanelType.HOME);
     testNeutralPanel = new Panel(PanelType.NEUTRAL);
     testSeed = new Random().nextLong();
+    suguri = new Player("Suguri", 4, 1, -1, 2);
   }
 
   @Test
@@ -67,11 +70,22 @@ class PanelTest {
 
   @Test
   public void bonusPanelActivateTest() {
-    assertEquals(0, testPlayer.getStars());
+    int expectedStars = 0;
+    assertEquals(expectedStars, suguri.getStars());
     var testRandom = new Random(testSeed);
-    int roll = testRandom.nextInt(6) + 1;
-    testPlayer.setSeed(testSeed);
-    testBonusPanel.activatedBy(testPlayer);
-//    assertEquals();
+    suguri.setSeed(testSeed);
+    for (int normaLvl = 1; normaLvl <= 6; normaLvl++) {
+      int roll = testRandom.nextInt(6) + 1;
+      testBonusPanel.activatedBy(suguri);
+      expectedStars += roll * Math.min(3, normaLvl);
+      assertEquals(expectedStars, suguri.getStars(),
+                   "Test failed with seed: " + testSeed);
+      suguri.normaClear();
+    }
+  }
+
+  @RepeatedTest(100)
+  public void bonusPanelConsistencyTest() {
+    bonusPanelActivateTest();
   }
 }
