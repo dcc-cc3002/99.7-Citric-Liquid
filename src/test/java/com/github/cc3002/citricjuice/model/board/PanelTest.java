@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author <a href="mailto:ignacio.slater@ug.cuhile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @version 1.0.2.2
+ * @version 1.0.6-b.3
  * @since 1.0
  */
 class PanelTest {
@@ -84,8 +84,10 @@ class PanelTest {
     }
   }
 
+  // region : Consistency tests
   @RepeatedTest(100)
   public void bonusPanelConsistencyTest() {
     bonusPanelActivateTest();
   }
+  // endregion
 }
