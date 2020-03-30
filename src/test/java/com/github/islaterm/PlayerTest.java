@@ -1,5 +1,6 @@
 package com.github.islaterm;
 
+import com.github.cc3002.citricjuice.model.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test suite for the players of the game.
@@ -51,5 +53,11 @@ public class PlayerTest {
     }
     assertEquals(expectedNorma, suguri.getNormaLevel(),
                  "Test failed with random seed: " + testSeed);
+  }
+
+  @RepeatedTest(100)
+  public void rollConsistencyTest() {
+    int roll = suguri.roll();
+    assertTrue(roll >= 1 && roll <= 6);
   }
 }

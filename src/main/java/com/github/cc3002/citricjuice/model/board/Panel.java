@@ -8,12 +8,13 @@ import java.util.Set;
 /**
  * Class that represents a panel in the board of the game.
  *
- * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater Muñoz</a>.
+ * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
+ *     Muñoz</a>.
  * @version 1.0.2.2
  * @since 1.0
  */
 public class Panel {
-  private String type;
+  private PanelType type;
   private Set<Panel> nextPanels = new HashSet<>();
 
   /**
@@ -22,14 +23,14 @@ public class Panel {
    * @param type
    *     the type of the panel.
    */
-  public Panel(String type) {
+  public Panel(PanelType type) {
     this.type = type;
   }
 
   /**
    * @return the type of this panel
    */
-  public String getType() {
+  public PanelType getType() {
     return type;
   }
 
@@ -50,7 +51,19 @@ public class Panel {
     nextPanels.add(panel);
   }
 
-  public void activatedBy(final Player testPlayer) {
+  /**
+   * Executes the appropriate action to the player according to this panel's
+   * type.
+   */
+  public void activatedBy(final Player player) {
+    switch (type) {
+      case BONUS:
+        applyBonusTo(player);
+        break;
+    }
+  }
 
+  private void applyBonusTo(final Player player) {
+    player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
   }
 }

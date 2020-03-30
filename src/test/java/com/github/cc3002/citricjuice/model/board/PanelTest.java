@@ -23,32 +23,34 @@ class PanelTest {
   private Panel testEncounterPanel;
   private Panel testBossPanel;
   private Player testPlayer;
+  private long testSeed;
 
   @BeforeEach
   public void setUp() {
-    testBonusPanel = new Panel("Bonus");
-    testBossPanel = new Panel("Boss");
-    testDropPanel = new Panel("Drop");
-    testEncounterPanel = new Panel("Encounter");
-    testHomePanel = new Panel("Home");
-    testNeutralPanel = new Panel("Neutral");
+    testBonusPanel = new Panel(PanelType.BONUS);
+    testBossPanel = new Panel(PanelType.BOSS);
+    testDropPanel = new Panel(PanelType.DROP);
+    testEncounterPanel = new Panel(PanelType.ENCOUNTER);
+    testHomePanel = new Panel(PanelType.HOME);
+    testNeutralPanel = new Panel(PanelType.NEUTRAL);
+    testSeed = new Random().nextLong();
   }
 
   @Test
   public void constructorTest() {
-    assertEquals("Bonus", testBonusPanel.getType());
-    assertEquals("Boss", testBossPanel.getType());
-    assertEquals("Drop", testDropPanel.getType());
-    assertEquals("Encounter", testEncounterPanel.getType());
-    assertEquals("Home", testHomePanel.getType());
-    assertEquals("Neutral", testNeutralPanel.getType());
+    assertEquals(PanelType.BONUS, testBonusPanel.getType());
+    assertEquals(PanelType.BOSS, testBossPanel.getType());
+    assertEquals(PanelType.DROP, testDropPanel.getType());
+    assertEquals(PanelType.ENCOUNTER, testEncounterPanel.getType());
+    assertEquals(PanelType.HOME, testHomePanel.getType());
+    assertEquals(PanelType.NEUTRAL, testNeutralPanel.getType());
   }
 
   @Test
   public void nextPanelTest() {
     assertTrue(testNeutralPanel.getNextPanels().isEmpty());
-    var expectedPanel1 = new Panel("");
-    var expectedPanel2 = new Panel("");
+    var expectedPanel1 = new Panel(PanelType.NEUTRAL);
+    var expectedPanel2 = new Panel(PanelType.NEUTRAL);
 
     testNeutralPanel.addNextPanel(expectedPanel1);
     assertEquals(1, testNeutralPanel.getNextPanels().size());
@@ -66,9 +68,9 @@ class PanelTest {
   @Test
   public void bonusPanelActivateTest() {
     assertEquals(0, testPlayer.getStars());
-    var testRandom = new Random(11);
+    var testRandom = new Random(testSeed);
     int roll = testRandom.nextInt(6) + 1;
-    testPlayer
+    testPlayer.setSeed(testSeed);
     testBonusPanel.activatedBy(testPlayer);
 //    assertEquals();
   }
