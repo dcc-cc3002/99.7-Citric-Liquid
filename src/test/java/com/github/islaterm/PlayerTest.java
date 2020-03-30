@@ -1,6 +1,7 @@
 package com.github.islaterm;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -10,8 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Test suite for the players of the game.
  *
- * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater Muñoz</a>.
- * @version 1.0.5-b3
+ * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
+ *     Muñoz</a>.
+ * @version 1.0.5-b4
  * @since 1.0
  */
 public class PlayerTest {
@@ -31,20 +33,23 @@ public class PlayerTest {
     assertEquals(1, suguri.getAtk());
     assertEquals(-1, suguri.getDef());
     assertEquals(2, suguri.getEvd());
+    assertEquals(1, suguri.getNormaLevel());
   }
 
   @Test
   public void normaClearTest() {
-    assertEquals(1, suguri.getNorma());
     suguri.normaClear();
-    assertEquals(2, suguri.getNorma());
-    suguri.normaClear();
-    int iterations = new Random(testSeed).nextInt(4);
-    int expectedNorma = suguri.getNorma() + iterations;
+    assertEquals(2, suguri.getNormaLevel());
+  }
+
+  @RepeatedTest(100)
+  public void normaClearConsistencyTest() {
+    int iterations = Math.abs(new Random(testSeed).nextInt());
+    int expectedNorma = suguri.getNormaLevel() + iterations;
     for (int it = 0; it < iterations; it++) {
       suguri.normaClear();
     }
-    assertEquals(expectedNorma, suguri.getNorma(),
+    assertEquals(expectedNorma, suguri.getNormaLevel(),
                  "Test failed with random seed: " + testSeed);
   }
 }
