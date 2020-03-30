@@ -1,5 +1,6 @@
 package com.github.islaterm;
 
+import com.github.cc3002.citricjuice.model.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test suite for the players of the game.
@@ -18,12 +20,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class PlayerTest {
   private Player suguri;
-  private long testSeed;
 
   @BeforeEach
   public void setUp() {
     suguri = new Player("Suguri", 4, 1, -1, 2);
-    testSeed = new Random().nextInt();
   }
 
   @Test
@@ -44,6 +44,7 @@ public class PlayerTest {
 
   @RepeatedTest(100)
   public void normaClearConsistencyTest() {
+    long testSeed = new Random().nextLong();
     int iterations = Math.abs(new Random(testSeed).nextInt());
     int expectedNorma = suguri.getNormaLevel() + iterations;
     for (int it = 0; it < iterations; it++) {
@@ -51,5 +52,15 @@ public class PlayerTest {
     }
     assertEquals(expectedNorma, suguri.getNormaLevel(),
                  "Test failed with random seed: " + testSeed);
+  }
+
+  @RepeatedTest(100)
+  public void rollConsistencyTest() {
+    long testSeed = new Random().nextLong();
+    suguri.setSeed(testSeed);
+    int roll = suguri.roll();
+    assertTrue(roll >= 1 && roll <= 6,
+               roll + "is not in [1, 6]" + System.lineSeparator()
+               + "Test failed with random seed: " + testSeed);
   }
 }
