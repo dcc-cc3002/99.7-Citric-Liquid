@@ -12,12 +12,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * @author <a href="mailto:ignacio.slater@ug.cuhile.cl">Ignacio Slater
- *     Muñoz</a>.
- * @version 1.0.6-b.3
+ * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater M.</a>.
+ * @version 1.0.6-b.4
  * @since 1.0
  */
 class PanelTest {
+  private final static String PLAYER_NAME = "Suguri";
+  private final static int BASE_HP = 4;
+  private final static int BASE_ATK = 1;
+  private final static int BASE_DEF = -1;
+  private final static int BASE_EVD = 2;
   private Panel testHomePanel;
   private Panel testNeutralPanel;
   private Panel testBonusPanel;
@@ -36,7 +40,7 @@ class PanelTest {
     testHomePanel = new Panel(PanelType.HOME);
     testNeutralPanel = new Panel(PanelType.NEUTRAL);
     testSeed = new Random().nextLong();
-    suguri = new Player("Suguri", 4, 1, -1, 2);
+    suguri = new Player(PLAYER_NAME, BASE_HP, BASE_ATK, BASE_DEF, BASE_EVD);
   }
 
   @Test
@@ -68,8 +72,9 @@ class PanelTest {
                  testNeutralPanel.getNextPanels());
   }
 
-  @Test
-  public void bonusPanelActivateTest() {
+  // region : Consistency tests
+  @RepeatedTest(100)
+  public void bonusPanelConsistencyTest() {
     int expectedStars = 0;
     assertEquals(expectedStars, suguri.getStars());
     var testRandom = new Random(testSeed);
@@ -84,10 +89,21 @@ class PanelTest {
     }
   }
 
-  // region : Consistency tests
   @RepeatedTest(100)
-  public void bonusPanelConsistencyTest() {
-    bonusPanelActivateTest();
+  public void dropPanelConsistencyTest() {
+    int expectedStars = 30;
+    suguri.increaseStarsBy(30);
+    assertEquals(expectedStars, suguri.getStars());
+    var testRandom = new Random(testSeed);
+    suguri.setSeed(testSeed);
+    for (int normaLvl = 1; normaLvl <= 6; normaLvl++) {
+      int roll = testRandom.nextInt(6) + 1;
+      testDropPanel.activatedBy(suguri);
+      expectedStars = Math.max(expectedStars - roll * normaLvl, 0);
+      assertEquals(expectedStars, suguri.getStars(),
+                   "Test failed with seed: " + testSeed);
+      suguri.normaClear();
+    }
   }
   // endregion
 }

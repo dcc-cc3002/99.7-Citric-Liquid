@@ -7,6 +7,7 @@ import java.util.Random;
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
+ * @version 1.0.6-b.4
  * @since 1.0
  */
 public class Player {
@@ -18,6 +19,7 @@ public class Player {
   private int evd;
   private int normaLevel;
   private int stars;
+  private int currentHP;
 
   /**
    * Creates a new character.
@@ -36,7 +38,7 @@ public class Player {
   public Player(final String name, final int hp, final int atk, final int def,
                 final int evd) {
     this.name = name;
-    this.maxHP = hp;
+    this.maxHP = currentHP = hp;
     this.atk = atk;
     this.def = def;
     this.evd = evd;
@@ -87,10 +89,6 @@ public class Player {
     return atk;
   }
 
-  private void setAtk(final int atk) {
-    this.atk = atk;
-  }
-
   /**
    * @return the current character's defense points.
    */
@@ -98,19 +96,11 @@ public class Player {
     return def;
   }
 
-  private void setDef(final int def) {
-    this.def = def;
-  }
-
   /**
    * @return the current character's evasion points.
    */
   public int getEvd() {
     return evd;
-  }
-
-  private void setEvd(final int evd) {
-    this.evd = evd;
   }
 
   /**
@@ -125,5 +115,22 @@ public class Player {
    */
   public void normaClear() {
     normaLevel++;
+  }
+
+  /**
+   * @return the current hit points of the character.
+   */
+  public int getCurrentHP() {
+    return currentHP;
+  }
+
+  /**
+   * Sets the current character's hit points.
+   * <p>
+   * The character's hit points have a constraint to always be between 0 and
+   * maxHP, both inclusive.
+   */
+  public void setCurrentHP(final int newHP) {
+    this.currentHP = Math.max(Math.min(newHP, maxHP), 0);
   }
 }

@@ -10,7 +10,7 @@ import java.util.Set;
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @version 1.0.2.2
+ * @version 1.0.6-b.4
  * @since 1.0
  */
 public class Panel {
@@ -60,7 +60,13 @@ public class Panel {
       case BONUS:
         applyBonusTo(player);
         break;
+      case DROP:
+        applyDropTo(player);
     }
+  }
+
+  private void applyDropTo(final Player player) {
+
   }
 
   private void applyBonusTo(final Player player) {
