@@ -10,7 +10,7 @@ import java.util.Set;
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @version 1.0.6-b.4
+ * @version 1.0.6-b.5
  * @since 1.0
  */
 public class Panel {
@@ -65,10 +65,18 @@ public class Panel {
     }
   }
 
+  /**
+   * Reduces the player's star count by the D6 roll multiplied by the player's
+   * norma level.
+   */
   private void applyDropTo(final Player player) {
-
+    player.reduceStarsBy(player.roll() * player.getNormaLevel());
   }
 
+  /**
+   * Reduces the player's star count by the D6 roll multiplied by the maximum
+   * between the player's norma level and three.
+   */
   private void applyBonusTo(final Player player) {
     player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
   }

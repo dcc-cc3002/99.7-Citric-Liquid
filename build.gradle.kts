@@ -11,8 +11,8 @@ repositories {
 
 dependencies {
   // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-  testCompile(group = "org.junit.jupiter", name = "junit-jupiter-api",
-              version = "5.6.0")
+  testImplementation(group = "org.junit.jupiter", name = "junit-jupiter-api",
+                     version = "5.6.0")
 }
 
 configure<JavaPluginConvention> {

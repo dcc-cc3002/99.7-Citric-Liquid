@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @version 1.0.6-b.4
+ * @version 1.0.6-b.5
  * @since 1.0
  */
 public class Player {
@@ -132,5 +132,14 @@ public class Player {
    */
   public void setCurrentHP(final int newHP) {
     this.currentHP = Math.max(Math.min(newHP, maxHP), 0);
+  }
+
+  /**
+   * Reduces this player's star count by a given amount.
+   * <p>
+   * The star count will must always be greater or equal to 0
+   */
+  public void reduceStarsBy(final int amount) {
+    stars = Math.max(0, stars - amount);
   }
 }

@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater M.</a>.
- * @version 1.0.6-b.4
+ * @version 1.0.6-b.5
  * @since 1.0
  */
 class PanelTest {
