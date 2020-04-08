@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @version 1.0.6-b.5
+ * @version 1.0.6-rc.1
  * @since 1.0
  */
 public class Player {

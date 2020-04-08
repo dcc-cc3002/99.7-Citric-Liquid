@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 /**
  * @author Ignacio Slater Muñoz.
+ * @version 1.0.6-rc.1
  * @since 1.0
  */
 public class JavaFXHelloWorld extends Application {
