@@ -14,8 +14,8 @@ import java.util.Set;
  * @since 1.0
  */
 public class Panel {
-  private PanelType type;
-  private Set<Panel> nextPanels = new HashSet<>();
+  private final PanelType type;
+  private final Set<Panel> nextPanels = new HashSet<>();
 
   /**
    * Creates a new panel.
@@ -23,7 +23,7 @@ public class Panel {
    * @param type
    *     the type of the panel.
    */
-  public Panel(PanelType type) {
+  public Panel(final PanelType type) {
     this.type = type;
   }
 
@@ -51,6 +51,26 @@ public class Panel {
     nextPanels.add(panel);
   }
 
+  private static void applyHealTo(final Player player) {
+    player.setCurrentHP(player.getCurrentHP() + 1);
+  }
+
+  /**
+   * Reduces the player's star count by the D6 roll multiplied by the player's
+   * norma level.
+   */
+  private static void applyDropTo(final Player player) {
+    player.reduceStarsBy(player.roll() * player.getNormaLevel());
+  }
+
+  /**
+   * Reduces the player's star count by the D6 roll multiplied by the maximum
+   * between the player's norma level and three.
+   */
+  private static void applyBonusTo(final Player player) {
+    player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
+  }
+
   /**
    * Executes the appropriate action to the player according to this panel's
    * type.
@@ -62,22 +82,12 @@ public class Panel {
         break;
       case DROP:
         applyDropTo(player);
+        break;
+      case HOME:
+        applyHealTo(player);
+        break;
+      case NEUTRAL:
+        break;
     }
-  }
-
-  /**
-   * Reduces the player's star count by the D6 roll multiplied by the player's
-   * norma level.
-   */
-  private void applyDropTo(final Player player) {
-    player.reduceStarsBy(player.roll() * player.getNormaLevel());
-  }
-
-  /**
-   * Reduces the player's star count by the D6 roll multiplied by the maximum
-   * between the player's norma level and three.
-   */
-  private void applyBonusTo(final Player player) {
-    player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
   }
 }

@@ -12,11 +12,11 @@ import java.util.Random;
  */
 public class Player {
   private final Random random;
-  private String name;
-  private int maxHP;
-  private int atk;
-  private int def;
-  private int evd;
+  private final String name;
+  private final int maxHP;
+  private final int atk;
+  private final int def;
+  private final int evd;
   private int normaLevel;
   private int stars;
   private int currentHP;
@@ -49,7 +49,7 @@ public class Player {
   /**
    * Increases this player's star count by an amount.
    */
-  public void increaseStarsBy(int amount) {
+  public void increaseStarsBy(final int amount) {
     stars += amount;
   }
 
@@ -141,5 +141,31 @@ public class Player {
    */
   public void reduceStarsBy(final int amount) {
     stars = Math.max(0, stars - amount);
+  }
+
+  @Override
+  public boolean equals(final Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof Player)) {
+      return false;
+    }
+    final Player player = (Player) o;
+    return getMaxHP() == player.getMaxHP() &&
+           getAtk() == player.getAtk() &&
+           getDef() == player.getDef() &&
+           getEvd() == player.getEvd() &&
+           getNormaLevel() == player.getNormaLevel() &&
+           getStars() == player.getStars() &&
+           getCurrentHP() == player.getCurrentHP() &&
+           getName().equals(player.getName());
+  }
+
+  /**
+   * @return a copy of this character.
+   */
+  public Player copy() {
+    return new Player(name, maxHP, atk, def, evd);
   }
 }

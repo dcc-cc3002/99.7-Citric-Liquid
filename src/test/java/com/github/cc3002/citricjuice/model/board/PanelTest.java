@@ -56,8 +56,8 @@ class PanelTest {
   @Test
   public void nextPanelTest() {
     assertTrue(testNeutralPanel.getNextPanels().isEmpty());
-    var expectedPanel1 = new Panel(PanelType.NEUTRAL);
-    var expectedPanel2 = new Panel(PanelType.NEUTRAL);
+    final var expectedPanel1 = new Panel(PanelType.NEUTRAL);
+    final var expectedPanel2 = new Panel(PanelType.NEUTRAL);
 
     testNeutralPanel.addNextPanel(expectedPanel1);
     assertEquals(1, testNeutralPanel.getNextPanels().size());
@@ -72,15 +72,33 @@ class PanelTest {
                  testNeutralPanel.getNextPanels());
   }
 
+  @Test
+  public void homePanelTest() {
+    assertEquals(suguri.getMaxHP(), suguri.getCurrentHP());
+    testHomePanel.activatedBy(suguri);
+    assertEquals(suguri.getMaxHP(), suguri.getCurrentHP());
+
+    suguri.setCurrentHP(1);
+    testHomePanel.activatedBy(suguri);
+    assertEquals(2, suguri.getCurrentHP());
+  }
+
+  @Test
+  public void neutralPanelTest() {
+    final var expectedSuguri = suguri.copy();
+    testNeutralPanel.activatedBy(suguri);
+    assertEquals(expectedSuguri, suguri);
+  }
+
   // region : Consistency tests
   @RepeatedTest(100)
   public void bonusPanelConsistencyTest() {
     int expectedStars = 0;
     assertEquals(expectedStars, suguri.getStars());
-    var testRandom = new Random(testSeed);
+    final var testRandom = new Random(testSeed);
     suguri.setSeed(testSeed);
     for (int normaLvl = 1; normaLvl <= 6; normaLvl++) {
-      int roll = testRandom.nextInt(6) + 1;
+      final int roll = testRandom.nextInt(6) + 1;
       testBonusPanel.activatedBy(suguri);
       expectedStars += roll * Math.min(3, normaLvl);
       assertEquals(expectedStars, suguri.getStars(),
@@ -94,10 +112,10 @@ class PanelTest {
     int expectedStars = 30;
     suguri.increaseStarsBy(30);
     assertEquals(expectedStars, suguri.getStars());
-    var testRandom = new Random(testSeed);
+    final var testRandom = new Random(testSeed);
     suguri.setSeed(testSeed);
     for (int normaLvl = 1; normaLvl <= 6; normaLvl++) {
-      int roll = testRandom.nextInt(6) + 1;
+      final int roll = testRandom.nextInt(6) + 1;
       testDropPanel.activatedBy(suguri);
       expectedStars = Math.max(expectedStars - roll * normaLvl, 0);
       assertEquals(expectedStars, suguri.getStars(),
