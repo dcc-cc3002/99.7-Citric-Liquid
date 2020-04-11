@@ -7,7 +7,7 @@ import java.util.Random;
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @version 1.0.6-rc.1
+ * @version 1.0.6-rc.3
  * @since 1.0
  */
 public class Player {
@@ -53,58 +53,67 @@ public class Player {
     stars += amount;
   }
 
+  /**
+   * Returns this player's star count.
+   */
   public int getStars() {
     return stars;
   }
 
+  /**
+   * Set's the seed for this player's random number generator.
+   * <p>
+   * The random number generator is used for taking non-deterministic decisions, this method is
+   * declared to avoid non-deterministic behaviour while testing the code.
+   */
   public void setSeed(final long seed) {
     random.setSeed(seed);
   }
 
   /**
-   * @return a uniformly distributed random value in [1, 6]
+   * Returns a uniformly distributed random value in [1, 6]
    */
   public int roll() {
     return random.nextInt(6) + 1;
   }
 
   /**
-   * @return the character's name.
+   * Returns the character's name.
    */
   public String getName() {
     return name;
   }
 
   /**
-   * @return the character's max hit points.
+   * Returns the character's max hit points.
    */
   public int getMaxHP() {
     return maxHP;
   }
 
   /**
-   * @return the current character's attack points.
+   * Returns the current character's attack points.
    */
   public int getAtk() {
     return atk;
   }
 
   /**
-   * @return the current character's defense points.
+   * Returns the current character's defense points.
    */
   public int getDef() {
     return def;
   }
 
   /**
-   * @return the current character's evasion points.
+   * Returns the current character's evasion points.
    */
   public int getEvd() {
     return evd;
   }
 
   /**
-   * @return the current norma level
+   * Returns the current norma level
    */
   public int getNormaLevel() {
     return normaLevel;
@@ -118,7 +127,7 @@ public class Player {
   }
 
   /**
-   * @return the current hit points of the character.
+   * Returns the current hit points of the character.
    */
   public int getCurrentHP() {
     return currentHP;
@@ -127,8 +136,7 @@ public class Player {
   /**
    * Sets the current character's hit points.
    * <p>
-   * The character's hit points have a constraint to always be between 0 and
-   * maxHP, both inclusive.
+   * The character's hit points have a constraint to always be between 0 and maxHP, both inclusive.
    */
   public void setCurrentHP(final int newHP) {
     this.currentHP = Math.max(Math.min(newHP, maxHP), 0);
@@ -163,7 +171,7 @@ public class Player {
   }
 
   /**
-   * @return a copy of this character.
+   * Returns a copy of this character.
    */
   public Player copy() {
     return new Player(name, maxHP, atk, def, evd);
