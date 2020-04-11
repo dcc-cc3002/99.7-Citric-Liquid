@@ -1,6 +1,7 @@
 package com.github.cc3002.citricjuice.model.board;
 
 import com.github.cc3002.citricjuice.model.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -10,7 +11,7 @@ import java.util.Set;
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
  *     Muñoz</a>.
- * @version 1.0.6-rc.1
+ * @version 1.0.6-rc.2
  * @since 1.0
  */
 public class Panel {
@@ -28,14 +29,36 @@ public class Panel {
   }
 
   /**
-   * @return the type of this panel
+   * Restores a player's HP in 1.
+   */
+  private static void applyHealTo(final @NotNull Player player) {
+    player.setCurrentHP(player.getCurrentHP() + 1);
+  }
+
+  /**
+   * Reduces the player's star count by the D6 roll multiplied by the player's norma level.
+   */
+  private static void applyDropTo(final @NotNull Player player) {
+    player.reduceStarsBy(player.roll() * player.getNormaLevel());
+  }
+
+  /**
+   * Reduces the player's star count by the D6 roll multiplied by the maximum between the player's
+   * norma level and three.
+   */
+  private static void applyBonusTo(final @NotNull Player player) {
+    player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
+  }
+
+  /**
+   * Returns the type of this panel
    */
   public PanelType getType() {
     return type;
   }
 
   /**
-   * @return a copy of this panel's next ones.
+   * Returns a copy of this panel's next ones.
    */
   public Set<Panel> getNextPanels() {
     return Set.copyOf(nextPanels);
@@ -51,29 +74,8 @@ public class Panel {
     nextPanels.add(panel);
   }
 
-  private static void applyHealTo(final Player player) {
-    player.setCurrentHP(player.getCurrentHP() + 1);
-  }
-
   /**
-   * Reduces the player's star count by the D6 roll multiplied by the player's
-   * norma level.
-   */
-  private static void applyDropTo(final Player player) {
-    player.reduceStarsBy(player.roll() * player.getNormaLevel());
-  }
-
-  /**
-   * Reduces the player's star count by the D6 roll multiplied by the maximum
-   * between the player's norma level and three.
-   */
-  private static void applyBonusTo(final Player player) {
-    player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
-  }
-
-  /**
-   * Executes the appropriate action to the player according to this panel's
-   * type.
+   * Executes the appropriate action to the player according to this panel's type.
    */
   public void activatedBy(final Player player) {
     switch (type) {
