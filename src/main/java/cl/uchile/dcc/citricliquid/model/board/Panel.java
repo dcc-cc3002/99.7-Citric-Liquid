@@ -1,17 +1,15 @@
-package com.github.cc3002.citricjuice.model.board;
+package cl.uchile.dcc.citricliquid.model.board;
 
-import com.github.cc3002.citricjuice.model.Player;
-import org.jetbrains.annotations.NotNull;
-
+import cl.uchile.dcc.citricliquid.model.Player;
 import java.util.HashSet;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Class that represents a panel in the board of the game.
  *
- * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
- *     Muñoz</a>.
- * @version 1.0.6-rc.2
+ * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater Muñoz</a>.
+ * @version 1.1.222804
  * @since 1.0
  */
 public class Panel {
@@ -21,8 +19,7 @@ public class Panel {
   /**
    * Creates a new panel.
    *
-   * @param type
-   *     the type of the panel.
+   * @param type the type of the panel.
    */
   public Panel(final PanelType type) {
     this.type = type;
@@ -32,7 +29,7 @@ public class Panel {
    * Restores a player's HP in 1.
    */
   private static void applyHealTo(final @NotNull Player player) {
-    player.setCurrentHP(player.getCurrentHP() + 1);
+    player.setCurrentHp(player.getCurrentHp() + 1);
   }
 
   /**
@@ -51,7 +48,7 @@ public class Panel {
   }
 
   /**
-   * Returns the type of this panel
+   * Returns the type of this panel.
    */
   public PanelType getType() {
     return type;
@@ -67,8 +64,7 @@ public class Panel {
   /**
    * Adds a new adjacent panel to this one.
    *
-   * @param panel
-   *     the panel to be added.
+   * @param panel the panel to be added.
    */
   public void addNextPanel(final Panel panel) {
     nextPanels.add(panel);
@@ -79,17 +75,11 @@ public class Panel {
    */
   public void activatedBy(final Player player) {
     switch (type) {
-      case BONUS:
-        applyBonusTo(player);
-        break;
-      case DROP:
-        applyDropTo(player);
-        break;
-      case HOME:
-        applyHealTo(player);
-        break;
-      case NEUTRAL:
-        break;
+      case BONUS -> applyBonusTo(player);
+      case DROP -> applyDropTo(player);
+      case HOME -> applyHealTo(player);
+      default -> {
+      }
     }
   }
 }
