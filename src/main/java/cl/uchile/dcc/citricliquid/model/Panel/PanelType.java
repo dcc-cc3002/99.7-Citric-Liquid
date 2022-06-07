@@ -1,4 +1,4 @@
-package cl.uchile.dcc.citricliquid.model.board;
+package cl.uchile.dcc.citricliquid.model.Panel;
 
 /**
  * Enum for the types of panels of the game.
@@ -8,5 +8,5 @@ package cl.uchile.dcc.citricliquid.model.board;
  * @since 1.0
  */
 public enum PanelType {
-  BONUS, BOSS, DROP, ENCOUNTER, HOME, NEUTRAL
+  BONUS, BOSS, DROP, ENCOUNTER, HOME, NEUTRAL, DRAW
 }
