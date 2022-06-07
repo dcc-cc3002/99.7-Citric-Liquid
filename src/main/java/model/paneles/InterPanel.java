@@ -1,9 +1,9 @@
-package cl.uchile.dcc.citricliquid.model.board;
+package model.paneles;
 
 
 import java.util.List;
 import java.util.Set;
-import main.personaje.player.Player;
+import model.personaje.player.Player;
 //Se tiene la interfaz que contiene los métodos
 // que todos los paneles tienen en común.
 

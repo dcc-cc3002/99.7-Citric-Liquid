@@ -1,4 +1,4 @@
-package cl.uchile.dcc.citricliquid.model.board;
+package model.paneles;
 
 
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
-import main.personaje.player.Player;
+import model.personaje.player.Player;
 
 /**
  * Abstrac class that is father of all the panels .
