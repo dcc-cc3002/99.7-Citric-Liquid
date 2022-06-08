@@ -1,9 +1,10 @@
 package cl.uchile.dcc.citricliquid.model.board;
 
 import cl.uchile.dcc.citricliquid.model.Player;
+import cl.uchile.dcc.citricliquid.model.PlayersInPanel;
+
 import java.util.HashSet;
 import java.util.Set;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Class that represents a panel in the board of the game.
@@ -12,46 +13,18 @@ import org.jetbrains.annotations.NotNull;
  * @version 1.1.222804
  * @since 1.0
  */
-public class Panel {
+public abstract class Panel {
   private final PanelType type;
-  private final Set<Panel> nextPanels = new HashSet<>();
+  private final Set<Panel> nextPanels;
+  private final PlayersInPanel players_in_panel;
 
   /**
    * Creates a new panel.
-   *
-   * @param type the type of the panel.
    */
-  public Panel(final PanelType type) {
+  public Panel(PanelType type) {
+    nextPanels = new HashSet<>();
+    players_in_panel = new PlayersInPanel();
     this.type = type;
-  }
-
-  /**
-   * Restores a player's HP in 1.
-   */
-  private static void applyHealTo(final @NotNull Player player) {
-    player.setCurrentHp(player.getCurrentHp() + 1);
-  }
-
-  /**
-   * Reduces the player's star count by the D6 roll multiplied by the player's norma level.
-   */
-  private static void applyDropTo(final @NotNull Player player) {
-    player.reduceStarsBy(player.roll() * player.getNormaLevel());
-  }
-
-  /**
-   * Reduces the player's star count by the D6 roll multiplied by the maximum between the player's
-   * norma level and three.
-   */
-  private static void applyBonusTo(final @NotNull Player player) {
-    player.increaseStarsBy(player.roll() * Math.min(player.getNormaLevel(), 3));
-  }
-
-  /**
-   * Returns the type of this panel.
-   */
-  public PanelType getType() {
-    return type;
   }
 
   /**
@@ -59,6 +32,13 @@ public class Panel {
    */
   public Set<Panel> getNextPanels() {
     return Set.copyOf(nextPanels);
+  }
+
+  /**
+   * Returns the players in panel
+   */
+  public PlayersInPanel getPlayers() {
+    return players_in_panel;
   }
 
   /**
@@ -71,15 +51,12 @@ public class Panel {
   }
 
   /**
-   * Executes the appropriate action to the player according to this panel's type.
+   * Returns the panel's type.
    */
-  public void activatedBy(final Player player) {
-    switch (type) {
-      case BONUS -> applyBonusTo(player);
-      case DROP -> applyDropTo(player);
-      case HOME -> applyHealTo(player);
-      default -> {
-      }
-    }
+  public PanelType getType() {
+    return type;
   }
+
+  public abstract void activatedBy(Player player);
+
 }
