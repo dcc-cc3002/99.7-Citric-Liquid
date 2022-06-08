@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cl.uchile.dcc.citricliquid.model.Entity.EntityTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-07T01:01:49" hostname="DESKTOP-CF2VUDB" time="0.029">
+  <properties/>
+  <testcase name="constructorTest()" classname="cl.uchile.dcc.citricliquid.model.Entity.EntityTest" time="0.026"/>
+  <testcase name="setStarsTest()" classname="cl.uchile.dcc.citricliquid.model.Entity.EntityTest" time="0.001"/>
+  <testcase name="reduceStarsByTest()" classname="cl.uchile.dcc.citricliquid.model.Entity.EntityTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" tests="254" skipped="0" failures="0" errors="0" timestamp="2022-06-07T01:01:50" hostname="DESKTOP-CF2VUDB" time="0.099">
+  <properties/>
+  <testcase name="testBossPanel()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="constructorTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 1 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.002"/>
+  <testcase name="repetition 2 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 3 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 4 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 5 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 6 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 7 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 8 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 9 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 10 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 11 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 12 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 13 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 14 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 15 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 16 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 17 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 18 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 19 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 20 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="testActivatedBy()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="testPvp()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="neutralPanelTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="removePlayerTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 1 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 2 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 3 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 4 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 5 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 6 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 7 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 8 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 9 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 10 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 11 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 12 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 13 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 14 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 15 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 16 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 17 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 18 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 19 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 20 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 21 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 22 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 23 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 24 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 25 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 26 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 27 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 28 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 29 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 30 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 31 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 32 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 33 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 34 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 35 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 36 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 37 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 38 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 39 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 40 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 41 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 42 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 43 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 44 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 45 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 46 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 47 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 48 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 49 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 50 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 51 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 52 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 53 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 54 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 55 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 56 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 57 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 58 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 59 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 60 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 61 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 62 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 63 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 64 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 65 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 66 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 67 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 68 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 69 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 70 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 71 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 72 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 73 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 74 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 75 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 76 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 77 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 78 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 79 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 80 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 81 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 82 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 83 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 84 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 85 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 86 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 87 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 88 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 89 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 90 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 91 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 92 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 93 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 94 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 95 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 96 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 97 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 98 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 99 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 100 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="removeEntityTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="isPlayerInPanelTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="homePanelTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="move1Test()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="testEntity()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="testEquals()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 1 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 2 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 3 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 4 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 5 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 6 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 7 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 8 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 9 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 10 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 11 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 12 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 13 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 14 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 15 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 16 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 17 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 18 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 19 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 20 of 20" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="getLocationTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 1 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 2 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 3 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 4 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 5 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 6 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 7 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 8 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 9 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 10 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 11 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 12 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 13 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 14 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 15 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 16 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 17 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 18 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 19 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 20 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 21 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 22 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 23 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 24 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 25 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 26 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 27 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 28 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 29 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 30 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 31 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 32 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 33 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 34 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 35 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 36 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 37 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 38 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 39 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 40 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 41 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 42 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 43 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 44 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 45 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 46 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 47 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 48 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 49 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 50 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 51 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 52 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 53 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 54 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 55 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 56 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 57 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 58 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 59 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 60 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 61 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 62 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 63 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 64 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 65 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 66 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 67 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 68 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 69 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 70 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 71 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 72 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 73 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 74 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 75 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 76 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 77 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 78 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 79 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 80 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 81 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 82 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 83 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 84 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 85 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 86 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 87 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 88 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 89 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <testcase name="repetition 90 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 91 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 92 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 93 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 94 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 95 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 96 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 97 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 98 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 99 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="repetition 100 of 100" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.0"/>
+  <testcase name="addPlayerTest()" classname="cl.uchile.dcc.citricliquid.model.Panel.PanelTest" time="0.001"/>
+  <system-out><![CDATA[A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Flying Castle
+A battle has begun between Suguri and Suguri1
+Cant add more players. Panel is full of players.
+You cant travel to the left
+You cant travel to the right
+You cant travel up
+You cant travel down
+Moving test 1
+Moving down
+Moving test 2
+Moving right
+Moving test 3
+Moving up
+Moving Test 4
+Moving Left
+All single moving test passed succesfully
+Begining move to the encounter using diferent paths
+Moving suguri
+Moving suguri1
+A battle has begun between Suguri1 and Suguri
+A battle has begun between Suguri1 and Suguri
+All moving test passed succesfully
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Seagull
+A battle has begun between Suguri and Robo Ball
+A battle has begun between Suguri and Chicken
+A battle has begun between Suguri and Robo Ball
+Cant add more players. Panel is full of players.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

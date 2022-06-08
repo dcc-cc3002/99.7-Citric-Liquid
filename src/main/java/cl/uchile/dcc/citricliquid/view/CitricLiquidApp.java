@@ -1,11 +1,12 @@
 package cl.uchile.dcc.citricliquid.view;
 
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
 
 /**
  * Example JavaFX application.
