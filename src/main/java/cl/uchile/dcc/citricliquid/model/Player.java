@@ -1,115 +1,49 @@
 package cl.uchile.dcc.citricliquid.model;
 
-import java.util.Random;
+import cl.uchile.dcc.citricliquid.model.battle.PlayerVsPlayer;
+import cl.uchile.dcc.citricliquid.model.board.Panel;
 
 /**
  * This class represents a player in the game 99.7% Citric Liquid.
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
- *     Muñoz</a>.
+ * Muñoz</a>.
  * @version 1.1.222804
  * @since 1.0
  */
-public class Player {
-  private final Random random;
-  private final String name;
-  private final int maxHp;
-  private final int atk;
-  private final int def;
-  private final int evd;
+public class Player extends Entity {
   private int normaLevel;
-  private int stars;
-  private int currentHp;
+  private int wins;
+  private Panel position;
 
   /**
    * Creates a new character.
    *
-   * @param name
-   *     the character's name.
-   * @param hp
-   *     the initial (and max) hit points of the character.
-   * @param atk
-   *     the base damage the character does.
-   * @param def
-   *     the base defense of the character.
-   * @param evd
-   *     the base evasion of the character.
+   * @param name the character's name.
+   * @param hp   the initial (and max) hit points of the character.
+   * @param atk  the base damage the character does.
+   * @param def  the base defense of the character.
+   * @param evd  the base evasion of the character.
    */
   public Player(final String name, final int hp, final int atk, final int def,
                 final int evd) {
-    this.name = name;
-    this.maxHp = currentHp = hp;
-    this.atk = atk;
-    this.def = def;
-    this.evd = evd;
+    super(name, hp, atk, def, evd);
     normaLevel = 1;
-    random = new Random();
+    wins = 0;
   }
 
   /**
-   * Increases this player's star count by an amount.
+   * Increase this player's win count by an amount.
    */
-  public void increaseStarsBy(final int amount) {
-    stars += amount;
+  public void increaseWinsBy(final int amount) {
+    wins += amount;
   }
 
   /**
-   * Returns this player's star count.
+   * Returns this player's wins count.
    */
-  public int getStars() {
-    return stars;
-  }
-
-  /**
-   * Set's the seed for this player's random number generator.
-   *
-   * <p>The random number generator is used for taking non-deterministic decisions, this method is
-   * declared to avoid non-deterministic behaviour while testing the code.
-   */
-  public void setSeed(final long seed) {
-    random.setSeed(seed);
-  }
-
-  /**
-   * Returns a uniformly distributed random value in [1, 6].
-   */
-  public int roll() {
-    return random.nextInt(6) + 1;
-  }
-
-  /**
-   * Returns the character's name.
-   */
-  public String getName() {
-    return name;
-  }
-
-  /**
-   * Returns the character's max hit points.
-   */
-  public int getMaxHp() {
-    return maxHp;
-  }
-
-  /**
-   * Returns the current character's attack points.
-   */
-  public int getAtk() {
-    return atk;
-  }
-
-  /**
-   * Returns the current character's defense points.
-   */
-  public int getDef() {
-    return def;
-  }
-
-  /**
-   * Returns the current character's evasion points.
-   */
-  public int getEvd() {
-    return evd;
+  public int getWins() {
+    return wins;
   }
 
   /**
@@ -126,30 +60,14 @@ public class Player {
     normaLevel++;
   }
 
-  /**
-   * Returns the current hit points of the character.
-   */
-  public int getCurrentHp() {
-    return currentHp;
-  }
-
-  /**
-   * Sets the current character's hit points.
-   *
-   * <p>The character's hit points have a constraint to always be between 0 and maxHP, both
-   * inclusive.
-   */
-  public void setCurrentHp(final int newHp) {
-    this.currentHp = Math.max(Math.min(newHp, maxHp), 0);
-  }
-
-  /**
-   * Reduces this player's star count by a given amount.
-   *
-   * <p>The star count will must always be greater or equal to 0
-   */
-  public void reduceStarsBy(final int amount) {
-    stars = Math.max(0, stars - amount);
+  public void setBattle(Player player) {
+    if (position.getPlayers().contains(player)) {
+      PlayerVsPlayer battle = new PlayerVsPlayer(this, player);
+      battle.battling();
+      battle.finish();
+    } else {
+      System.out.println("No se encuentra aquí ese jugador");
+    }
   }
 
   @Override
@@ -161,19 +79,19 @@ public class Player {
       return false;
     }
     return getMaxHp() == player.getMaxHp()
-           && getAtk() == player.getAtk()
-           && getDef() == player.getDef()
-           && getEvd() == player.getEvd()
-           && getNormaLevel() == player.getNormaLevel()
-           && getStars() == player.getStars()
-           && getCurrentHp() == player.getCurrentHp()
-           && getName().equals(player.getName());
+            && getAtk() == player.getAtk()
+            && getDef() == player.getDef()
+            && getEvd() == player.getEvd()
+            && getNormaLevel() == player.getNormaLevel()
+            && getStars() == player.getStars()
+            && getCurrentHp() == player.getCurrentHp()
+            && getName().equals(player.getName());
   }
 
   /**
    * Returns a copy of this character.
    */
   public Player copy() {
-    return new Player(name, maxHp, atk, def, evd);
+    return new Player(getName(), getMaxHp(), getAtk(), getDef(), getEvd());
   }
 }

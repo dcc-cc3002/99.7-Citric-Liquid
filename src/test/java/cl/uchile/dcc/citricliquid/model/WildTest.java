@@ -7,25 +7,18 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-/**
- * Test suite for the players of the game.
- *
- * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater M.</a>.
- * @version 1.0.6-rc.1
- * @since 1.0
- */
-public class PlayerTest {
-  private final static String PLAYER_NAME = "Suguri";
-  private Player suguri;
+public class WildTest {
+  private final static String WILD_NAME = "Suguri Boss";
+  private Wild suguri;
 
   @BeforeEach
   public void setUp() {
-    suguri = new Player(PLAYER_NAME, 4, 1, -1, 2);
+    suguri = new Wild(WILD_NAME, 4, 1, -1, 2);
   }
 
   @Test
   public void constructorTest() {
-    final var expectedSuguri = new Player(PLAYER_NAME, 4, 1, -1, 2);
+    final var expectedSuguri = new Wild(WILD_NAME, 4, 1, -1, 2);
     Assertions.assertEquals(expectedSuguri, suguri);
   }
 
@@ -44,13 +37,13 @@ public class PlayerTest {
   @Test
   public void testWins() {
     int wins = 0;
-    Assertions.assertEquals(wins, suguri.getWins());
-    suguri.increaseWinsBy(7);
+    Assertions.assertEquals(wins, suguri.getStars());
+    suguri.increaseStarsBy(7);
     wins += 7;
-    Assertions.assertEquals(wins, suguri.getWins());
-    suguri.increaseWinsBy(8);
+    Assertions.assertEquals(wins, suguri.getStars());
+    suguri.increaseStarsBy(8);
     wins += 8;
-    Assertions.assertEquals(wins, suguri.getWins());
+    Assertions.assertEquals(wins, suguri.getStars());
   }
 
   @Test
@@ -58,7 +51,9 @@ public class PlayerTest {
     final var o = new Object();
     Assertions.assertNotEquals(suguri, o);
     Assertions.assertEquals(suguri, suguri);
-    final var expectedSuguri = new Player(PLAYER_NAME, 4, 1, -1, 2);
+    var notExpectedSuguri = new Player(WILD_NAME, 4, 1, -1, 2);
+    Assertions.assertNotEquals(notExpectedSuguri, suguri);
+    var expectedSuguri = new Wild(WILD_NAME, 4, 1, -1, 2);
     Assertions.assertEquals(expectedSuguri, suguri);
   }
 
@@ -71,22 +66,6 @@ public class PlayerTest {
     Assertions.assertEquals(0, suguri.getCurrentHp());
     suguri.setCurrentHp(5);
     Assertions.assertEquals(4, suguri.getCurrentHp());
-  }
-
-  @Test
-  public void normaClearTest() {
-    suguri.normaClear();
-    Assertions.assertEquals(2, suguri.getNormaLevel());
-  }
-
-  @Test
-  public void copyTest() {
-    final var expectedSuguri = new Player(PLAYER_NAME, 4, 1, -1, 2);
-    final var actualSuguri = suguri.copy();
-    // Checks that the copied player have the same parameters as the original
-    Assertions.assertEquals(expectedSuguri, actualSuguri);
-    // Checks that the copied player doesn't reference the same object
-    Assertions.assertNotSame(expectedSuguri, actualSuguri);
   }
 
   // region : consistency tests
@@ -102,19 +81,6 @@ public class PlayerTest {
             suguri.getCurrentHp() + "is not a valid HP value"
                     + System.lineSeparator() + "Test failed with random seed: "
                     + testSeed);
-  }
-
-  @RepeatedTest(100)
-  public void normaClearConsistencyTest() {
-    final long testSeed = new Random().nextLong();
-    // We're gonna test for 0 to 5 norma clears
-    final int iterations = Math.abs(new Random(testSeed).nextInt(6));
-    final int expectedNorma = suguri.getNormaLevel() + iterations;
-    for (int it = 0; it < iterations; it++) {
-      suguri.normaClear();
-    }
-    Assertions.assertEquals(expectedNorma, suguri.getNormaLevel(),
-            "Test failed with random seed: " + testSeed);
   }
 
   @RepeatedTest(100)

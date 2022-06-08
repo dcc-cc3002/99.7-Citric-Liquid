@@ -22,25 +22,26 @@ class PanelTest {
   private final static int BASE_ATK = 1;
   private final static int BASE_DEF = -1;
   private final static int BASE_EVD = 2;
-  private Panel testHomePanel;
-  private Panel testNeutralPanel;
-  private Panel testBonusPanel;
-  private Panel testDropPanel;
-  private Panel testEncounterPanel;
-  private Panel testBossPanel;
+  private HomePanel testHomePanel;
+  private NeutralPanel testNeutralPanel;
+  private BonusPanel testBonusPanel;
+  private DropPanel testDropPanel;
+  private EncounterPanel testEncounterPanel;
+  private BossPanel testBossPanel;
   private Player suguri;
   private long testSeed;
 
   @BeforeEach
   public void setUp() {
-    testBonusPanel = new Panel(PanelType.BONUS);
-    testBossPanel = new Panel(PanelType.BOSS);
-    testDropPanel = new Panel(PanelType.DROP);
-    testEncounterPanel = new Panel(PanelType.ENCOUNTER);
-    testHomePanel = new Panel(PanelType.HOME);
-    testNeutralPanel = new Panel(PanelType.NEUTRAL);
+    testBonusPanel = new BonusPanel();
+    testBossPanel = new BossPanel();
+    testDropPanel = new DropPanel();
+    testEncounterPanel = new EncounterPanel();
+    testHomePanel = new HomePanel();
+    testNeutralPanel = new NeutralPanel();
     testSeed = new Random().nextLong();
     suguri = new Player(PLAYER_NAME, BASE_HP, BASE_ATK, BASE_DEF, BASE_EVD);
+
   }
 
   @Test
@@ -56,8 +57,8 @@ class PanelTest {
   @Test
   public void nextPanelTest() {
     assertTrue(testNeutralPanel.getNextPanels().isEmpty());
-    final var expectedPanel1 = new Panel(PanelType.NEUTRAL);
-    final var expectedPanel2 = new Panel(PanelType.NEUTRAL);
+    final var expectedPanel1 = new NeutralPanel();
+    final var expectedPanel2 = new NeutralPanel();
 
     testNeutralPanel.addNextPanel(expectedPanel1);
     assertEquals(1, testNeutralPanel.getNextPanels().size());
@@ -69,7 +70,7 @@ class PanelTest {
     assertEquals(2, testNeutralPanel.getNextPanels().size());
 
     assertEquals(Set.of(expectedPanel1, expectedPanel2),
-                 testNeutralPanel.getNextPanels());
+            testNeutralPanel.getNextPanels());
   }
 
   @Test
@@ -81,6 +82,43 @@ class PanelTest {
     suguri.setCurrentHp(1);
     testHomePanel.activatedBy(suguri);
     assertEquals(2, suguri.getCurrentHp());
+    assertEquals(1, suguri.getNormaLevel());
+
+    suguri.increaseStarsBy(10);
+    suguri.increaseWinsBy(2);
+    testHomePanel.activatedBy(suguri);
+    assertEquals(2, suguri.getNormaLevel());
+    testHomePanel.activatedBy(suguri);
+    assertEquals(2, suguri.getNormaLevel());
+
+    suguri.increaseStarsBy(22);
+    testHomePanel.activatedBy(suguri);
+    assertEquals(3, suguri.getNormaLevel());
+    testHomePanel.activatedBy(suguri);
+    assertEquals(3, suguri.getNormaLevel());
+
+    suguri.increaseStarsBy(53);
+    suguri.increaseWinsBy(4);
+    testHomePanel.activatedBy(suguri);
+    assertEquals(4, suguri.getNormaLevel());
+    testHomePanel.activatedBy(suguri);
+    assertEquals(4, suguri.getNormaLevel());
+
+    suguri.increaseStarsBy(50);
+    suguri.increaseWinsBy(2);
+    testHomePanel.activatedBy(suguri);
+    assertEquals(4, suguri.getNormaLevel());
+    suguri.increaseWinsBy(2);
+    testHomePanel.activatedBy(suguri);
+    assertEquals(5, suguri.getNormaLevel());
+
+    suguri.increaseStarsBy(83);
+    suguri.increaseWinsBy(4);
+    testHomePanel.activatedBy(suguri);
+    assertEquals(6, suguri.getNormaLevel());
+    testHomePanel.activatedBy(suguri);
+    assertEquals(6, suguri.getNormaLevel());
+
   }
 
   @Test
@@ -102,7 +140,7 @@ class PanelTest {
       testBonusPanel.activatedBy(suguri);
       expectedStars += roll * Math.min(3, normaLvl);
       assertEquals(expectedStars, suguri.getStars(),
-                   "Test failed with seed: " + testSeed);
+              "Test failed with seed: " + testSeed);
       suguri.normaClear();
     }
   }
@@ -119,7 +157,7 @@ class PanelTest {
       testDropPanel.activatedBy(suguri);
       expectedStars = Math.max(expectedStars - roll * normaLvl, 0);
       assertEquals(expectedStars, suguri.getStars(),
-                   "Test failed with seed: " + testSeed);
+              "Test failed with seed: " + testSeed);
       suguri.normaClear();
     }
   }
