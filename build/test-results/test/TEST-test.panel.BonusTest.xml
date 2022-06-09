@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.panel.BonusTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-07T01:27:53" hostname="DESKTOP-E5N99OK" time="0.189">
+  <properties/>
+  <testcase name="constructorTest()" classname="test.panel.BonusTest" time="0.126"/>
+  <testcase name="bonuspaneltest()" classname="test.panel.BonusTest" time="0.04"/>
+  <testcase name="playersTest()" classname="test.panel.BonusTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.panel.HomePanelTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-06-07T01:27:57" hostname="DESKTOP-E5N99OK" time="0.015">
+  <properties/>
+  <testcase name="constructorTest()" classname="test.panel.HomePanelTest" time="0.003"/>
+  <testcase name="normaCheckMix()" classname="test.panel.HomePanelTest" time="0.001"/>
+  <testcase name="healTest()" classname="test.panel.HomePanelTest" time="0.001"/>
+  <testcase name="normaCheckStars()" classname="test.panel.HomePanelTest" time="0.005"/>
+  <testcase name="playersTest()" classname="test.panel.HomePanelTest" time="0.001"/>
+  <testcase name="normaCheckWins()" classname="test.panel.HomePanelTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

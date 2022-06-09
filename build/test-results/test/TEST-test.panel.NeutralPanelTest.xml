@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.panel.NeutralPanelTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-07T01:27:57" hostname="DESKTOP-E5N99OK" time="0.008">
+  <properties/>
+  <testcase name="constructorTest()" classname="test.panel.NeutralPanelTest" time="0.002"/>
+  <testcase name="playersTest()" classname="test.panel.NeutralPanelTest" time="0.001"/>
+  <testcase name="activatedTest()" classname="test.panel.NeutralPanelTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
