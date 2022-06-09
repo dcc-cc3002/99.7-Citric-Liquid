@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.personajes.enemies.WildUnitTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-06-07T01:27:57" hostname="DESKTOP-E5N99OK" time="0.035">
+  <properties/>
+  <testcase name="starsTest()" classname="test.personajes.enemies.WildUnitTest" time="0.002"/>
+  <testcase name="hpTest()" classname="test.personajes.enemies.WildUnitTest" time="0.004"/>
+  <testcase name="chikenconstructorTest()" classname="test.personajes.enemies.WildUnitTest" time="0.002"/>
+  <testcase name="seadullconstructorTest()" classname="test.personajes.enemies.WildUnitTest" time="0.005"/>
+  <testcase name="equalsTest()" classname="test.personajes.enemies.WildUnitTest" time="0.002"/>
+  <testcase name="robo_ballconstructorTest()" classname="test.personajes.enemies.WildUnitTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

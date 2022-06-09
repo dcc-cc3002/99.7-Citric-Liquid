@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.personajes.enemies.BossUnitTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-06-07T01:27:57" hostname="DESKTOP-E5N99OK" time="0.018">
+  <properties/>
+  <testcase name="starsTest()" classname="test.personajes.enemies.BossUnitTest" time="0.001"/>
+  <testcase name="hpTest()" classname="test.personajes.enemies.BossUnitTest" time="0.003"/>
+  <testcase name="shifuonstructorTest()" classname="test.personajes.enemies.BossUnitTest" time="0.003"/>
+  <testcase name="equalsTest()" classname="test.personajes.enemies.BossUnitTest" time="0.001"/>
+  <testcase name="storeonstructorTest()" classname="test.personajes.enemies.BossUnitTest" time="0.002"/>
+  <testcase name="flyingeconstructorTest()" classname="test.personajes.enemies.BossUnitTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
