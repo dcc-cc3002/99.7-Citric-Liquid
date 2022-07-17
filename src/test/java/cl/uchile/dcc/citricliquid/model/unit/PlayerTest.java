@@ -149,5 +149,6 @@ public class PlayerTest {
     Assertions.assertEquals(suguri.getStars(), suguri.getWins());
     suguri.setWins(5);
     Assertions.assertEquals(5, suguri.getWins());
+    suguri.increaseStarsBy(storeManager);
   }
 }

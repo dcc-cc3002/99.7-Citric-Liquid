@@ -1,5 +1,7 @@
 package cl.uchile.dcc.citricliquid.phases;
 
+import cl.uchile.dcc.citricliquid.controller.GameController;
+
 public class RecoveryPhase extends Phase{
 
     public RecoveryPhase() {
@@ -18,5 +20,10 @@ public class RecoveryPhase extends Phase{
     @Override
     public String toString() {
         return "RecoveryPhase";
+    }
+
+    @Override
+    public void setController(GameController controller) {
+        super.setController(controller);
     }
 }

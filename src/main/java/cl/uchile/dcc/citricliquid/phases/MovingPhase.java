@@ -1,5 +1,7 @@
 package cl.uchile.dcc.citricliquid.phases;
 
+import cl.uchile.dcc.citricliquid.controller.GameController;
+
 public class MovingPhase extends Phase{
 
     public MovingPhase() {
@@ -18,5 +20,10 @@ public class MovingPhase extends Phase{
     @Override
     public String toString() {
         return "MovingPhase";
+    }
+
+    @Override
+    public void setController(GameController controller) {
+        super.setController(controller);
     }
 }

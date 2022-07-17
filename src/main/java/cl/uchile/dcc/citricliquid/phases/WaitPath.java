@@ -1,5 +1,7 @@
 package cl.uchile.dcc.citricliquid.phases;
 
+import cl.uchile.dcc.citricliquid.controller.GameController;
+
 public class WaitPath extends Phase{
 
     public WaitPath() {
@@ -18,5 +20,10 @@ public class WaitPath extends Phase{
     @Override
     public String toString() {
         return "WaitPathPhase";
+    }
+
+    @Override
+    public void setController(GameController controller) {
+        super.setController(controller);
     }
 }

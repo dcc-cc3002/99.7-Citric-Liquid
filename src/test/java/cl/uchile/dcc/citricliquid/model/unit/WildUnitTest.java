@@ -65,6 +65,13 @@ public class WildUnitTest {
         Assertions.assertNotSame(expectedChicken, actualChicken);
     }
 
+    @Test
+    public void getNameTest() {
+        Assertions.assertEquals(chicken.getName(), WILD_NAME_1);
+        Assertions.assertEquals(roboBall.getName(), WILD_NAME_2);
+        Assertions.assertEquals(seagull.getName(), WILD_NAME_3);
+    }
+
     // region : consistency tests
     @RepeatedTest(100)
     public void hitPointsConsistencyTest() {

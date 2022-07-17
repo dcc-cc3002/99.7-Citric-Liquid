@@ -1,5 +1,6 @@
 package cl.uchile.dcc.citricliquid.phases;
 
+import cl.uchile.dcc.citricliquid.controller.GameController;
 import cl.uchile.dcc.citricliquid.model.unit.Player;
 import cl.uchile.dcc.citricliquid.model.unit.Unit;
 
@@ -28,5 +29,10 @@ public class Battle extends Phase {
     @Override
     public String toString() {
         return "BattlePhase";
+    }
+
+    @Override
+    public void setController(GameController controller) {
+        super.setController(controller);
     }
 }

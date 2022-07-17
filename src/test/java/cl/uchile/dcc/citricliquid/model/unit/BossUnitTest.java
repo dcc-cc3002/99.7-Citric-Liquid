@@ -66,6 +66,13 @@ public class BossUnitTest {
         Assertions.assertNotSame(expectedBoss, actualBoss);
     }
 
+    @Test
+    public void getNameTest() {
+        Assertions.assertEquals(storeManager.getName(), BOSS_NAME_1);
+        Assertions.assertEquals(shifuRobot.getName(), BOSS_NAME_2);
+        Assertions.assertEquals(flyingCastle.getName(), BOSS_NAME_3);
+    }
+
     // region : consistency tests
     @RepeatedTest(100)
     public void hitPointsConsistencyTest() {
