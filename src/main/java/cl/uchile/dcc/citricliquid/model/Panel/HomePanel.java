@@ -26,4 +26,5 @@ public class HomePanel extends Panel {
       player.setCurrentHp(player.getCurrentHp() + 1);
     }
   }
+
 }

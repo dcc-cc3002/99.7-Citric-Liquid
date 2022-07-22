@@ -1,7 +1,6 @@
 package cl.uchile.dcc.citricliquid.model.Entities.BossUnit;
 
 import cl.uchile.dcc.citricliquid.model.Entities.Entity;
-
 import cl.uchile.dcc.citricliquid.model.Panel.Panel;
 
 /**

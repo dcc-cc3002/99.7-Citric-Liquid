@@ -153,44 +153,7 @@ public class PlayerTest {
   /**
    * Damage test.
    */
-  @RepeatedTest(5)
-  public void damageTest() {
-    System.out.println("A fight has begun");
-    while (! suguri.isKo()) {
-      suguri.evade(suguri1);
-      System.out.println("---------------");
 
-    }
-    System.out.println("---------------");
-    System.out.println("A fight has begun");
-    suguri1.setCurrentHp(5);
-    while (! suguri.isKo()) {
-      suguri1.defend(suguri1);
-      System.out.println("---------------");
-    }
-    System.out.println("---------------");
-  }
-
-  /**
-   * damage test to another player.
-   */
-  @RepeatedTest(5)
-  public void damageTest1() {
-    System.out.println("A fight has begun");
-    while (! suguri1.isKo()) {
-      suguri1.evade(suguri);
-      System.out.println("---------------");
-
-    }
-    System.out.println("---------------");
-    System.out.println("A fight has begun");
-    suguri1.setCurrentHp(5);
-    while (! suguri1.isKo()) {
-      suguri1.defend(suguri);
-      System.out.println("---------------");
-    }
-    System.out.println("---------------");
-  }
 
   @Test
   public void testNormaClear() {

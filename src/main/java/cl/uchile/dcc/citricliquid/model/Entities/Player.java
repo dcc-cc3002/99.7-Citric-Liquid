@@ -1,7 +1,11 @@
 package cl.uchile.dcc.citricliquid.model.Entities;
 
 import cl.uchile.dcc.citricliquid.model.Panel.Panel;
+import javafx.beans.property.Property;
 import org.jetbrains.annotations.NotNull;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
 /**
  * Handles the player. It's a concrete class.
@@ -18,7 +22,12 @@ public class Player extends Character {
 
   private Panel actualPanel;
 
+  private final PropertyChangeSupport NormaObserver = new PropertyChangeSupport(this);
 
+
+  public void addNormaChangeNotification(PropertyChangeListener listener){
+    NormaObserver.addPropertyChangeListener(listener);
+  }
   /**
    * Creates a new character.
    *
@@ -67,6 +76,8 @@ public class Player extends Character {
    *
    * @param panel in which the player will be.
    */
+
+
   public void setLocation(@NotNull Panel panel) {
 
 
@@ -75,6 +86,13 @@ public class Player extends Character {
     this.actualPanel = panel;
 
 
+  }
+
+
+  public void setNormaLevel(int NormaLevel){
+    int oldNorma=getNormaLevel();
+    this.normaLevel=NormaLevel;
+    NormaObserver.firePropertyChange("NORMA CHANGE",oldNorma,getNormaLevel());
   }
 
   /**
@@ -110,7 +128,7 @@ public class Player extends Character {
 
     int n = panels.length;
     Panel initPanel = this.actualPanel;
-
+    //CASE LEFT
     if (dir[0] == 1) {
       //The player wants to move to the left. We need to check if there is a panel to the left.
       if (initPanel.getPaths()[0] == 1) {
@@ -130,7 +148,6 @@ public class Player extends Character {
 
             panels[i].addPlayer(this);
             initPanel.removePlayer(this);
-            this.checksForEnemyPlayer();
             break;
           }
           i++;
@@ -159,7 +176,7 @@ public class Player extends Character {
 
             panels[i].addPlayer(this);
             initPanel.removePlayer(this);
-            this.checksForEnemyPlayer();
+
             break;
           }
           i++;
@@ -189,7 +206,7 @@ public class Player extends Character {
 
             panels[i].addPlayer(this);
             initPanel.removePlayer(this);
-            this.checksForEnemyPlayer();
+
             break;
           }
           i++;
@@ -218,7 +235,6 @@ public class Player extends Character {
 
             panels[i].addPlayer(this);
             initPanel.removePlayer(this);
-            this.checksForEnemyPlayer();
             break;
           }
           i++;
@@ -276,22 +292,15 @@ public class Player extends Character {
 
   /**
    * This function checks if there is an enemy player already in the panel.
-   * If there is an enemy, it will trigger a fight.
+   * If there is an enemy, it will trigger a fight if the attacker wants to.
    */
-  public void checksForEnemyPlayer() {
+  public boolean checksForEnemyPlayer() {
     if (actualPanel.getPlayers()[0] != null
             &&
             actualPanel.getPlayers()[1] != null) {
-      Player player1 = this.actualPanel.getPlayers()[0];
-      Player player2 = this.actualPanel.getPlayers()[1];
-      if (player1.equals(this)) {
-        this.actualPanel.setBattleAgainstPlayer(this, player2);
-
-      }
-      if (player2.equals(this)) {
-        this.actualPanel.setBattleAgainstPlayer(this,
-                player1);
-      }
+      return true;
+    }else{
+      return false;
     }
   }
 

@@ -5,7 +5,6 @@ import cl.uchile.dcc.citricliquid.model.Entities.BossUnit.StoreManager;
 import cl.uchile.dcc.citricliquid.model.Entities.Entity;
 import cl.uchile.dcc.citricliquid.model.Entities.Player;
 import cl.uchile.dcc.citricliquid.model.Entities.Wild_Unit.Chicken;
-import cl.uchile.dcc.citricliquid.model.Panel.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
@@ -58,7 +57,7 @@ class PanelTest {
     testHomePanel = new HomePanel(3, 1, new int[]{0, 0, 0, 1});
     testNeutralPanel = new NeutralPanel(4, 0, new int[]{0, 0, 1, 0});
     testNeutralPanel1 = new NeutralPanel(4, 1, new int[]{1, 0, 0, 0});
-    testDrawPanel = new DrawPanel(5,0,new int[]{0,0,0,0});
+    testDrawPanel = new DrawPanel(5, 0, new int[]{0, 0, 0, 0});
     testSeed = new Random().nextLong();
     suguri = new Player(PLAYER_NAME, BASE_HP, BASE_ATK, BASE_DEF, BASE_EVD);
     suguri1 = new Player("Suguri1", BASE_HP, BASE_ATK, BASE_DEF, BASE_EVD);
@@ -91,7 +90,7 @@ class PanelTest {
   public void move1Test() {
     final Panel[] panels = new Panel[]{testBonusPanel, testBonusPanel1, testBossPanel,
             testDropPanel, testEncounterPanel,
-            testNeutralPanel, testHomePanel, testNeutralPanel1,testDrawPanel};
+            testNeutralPanel, testHomePanel, testNeutralPanel1, testDrawPanel};
 
     //Clearing Panels.
     testBonusPanel.clearPanel();
@@ -248,7 +247,6 @@ class PanelTest {
 
     testDrawPanel.addPlayer(suguri);
     testDrawPanel.activatedBy(suguri);
-
   }
 
   @Test

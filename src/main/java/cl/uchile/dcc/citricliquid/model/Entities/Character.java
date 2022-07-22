@@ -1,5 +1,7 @@
 package cl.uchile.dcc.citricliquid.model.Entities;
 
+import cl.uchile.dcc.citricliquid.States.IdleState;
+import cl.uchile.dcc.citricliquid.States.State;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
@@ -16,11 +18,16 @@ public abstract class Character implements CharacterInterface {
   private final int def;
   private final int evd;
   private final Random random;
+  private State state;
 
   private int tempAtk;
   private int tempDef;
+
+  private int tempEvd;
   private int currentHp;
   private int stars;
+
+
 
   /**
    * Constructor of character.
@@ -39,7 +46,54 @@ public abstract class Character implements CharacterInterface {
     this.evd = evd;
     this.stars = 0;
     this.random = new Random();
+    this.setState(new IdleState());
+  }
 
+  /**
+   * Changes the state (attacking, defending, etc)
+   * @param state to set.
+   */
+  public void setState(@NotNull State state){
+    this.state = state;
+    state.setCharacter(this);
+  }
+
+  public void ChangeState(State state){
+    this.setState(state);
+  }
+
+  /**
+   * Gets the states in which the character is.
+   * @return the state.
+   */
+  public State getState(){
+    return this.state;
+  }
+
+  public void attack(Character enemy){state.attack(enemy);}
+
+  public void defendDecision(Character enemy, String decision){state.defendDecision(enemy,decision);}
+
+  public void defendFrom(Character enemy){
+    state.defend(enemy);
+  }
+
+  public void evadeFrom(Character enemy){
+    state.evade(enemy);
+  }
+
+  public boolean isAttacking(){
+    return state.isAttacking();
+  }
+  public boolean isAttacked() { return state.isAttacked();}
+  public boolean isDefending(){
+    return state.isDefending();
+  }
+  public boolean isRecovering(){
+    return state.isRecovering();
+  }
+  public boolean isIdle(){
+    return state.isIdle();
   }
 
   public int rollAtk() {
@@ -50,6 +104,10 @@ public abstract class Character implements CharacterInterface {
   public int rollDef() {
     this.tempDef = roll();
     return this.tempDef;
+  }
+  public int rollEvd(){
+    this.tempDef=roll();
+    return this.tempEvd;
   }
 
   /**
@@ -95,58 +153,11 @@ public abstract class Character implements CharacterInterface {
     return maxHp;
   }
 
-  /**
-   * Defense from an enemy.
-   *
-   * @param enemy is the source of the attack
-   */
-  public void defend(@NotNull Character enemy) {
-    System.out.println(enemy.getName()
-            +
-            " attacks"
-    );
-    int damage = Math.max(1, enemy.rollAtk() + enemy.getAtk() - (rollDef() + def));
-    setCurrentHp(this.currentHp - damage);
-    System.out.println("Attack defended");
-    System.out.println("Damage Done:" + damage);
-    System.out.println("current hp: " + this.currentHp);
-
-  }
-
-  /**
-   * Evasion from an enemy.
-   *
-   * @param enemy is the source of the attack
-   */
-  public void evade(@NotNull Character enemy) {
-    System.out.println(enemy.getName()
-            +
-            " attacks"
-    );
-    if (rollDef() + this.def > enemy.getAtk() + enemy.rollAtk()) {
-
-      System.out.println(this.getName()
-              +
-              " evaded the attack!! "
-      );
-      System.out.println("Damage Done:" + 0);
-      System.out.println("current hp: " + this.currentHp);
-    } else {
-      int damage = enemy.getAtk() + enemy.rollAtk();
-      setCurrentHp(this.getCurrentHp() - damage);
-      System.out.println(this.getName()
-              +
-              " didn't evaded the attack!! "
-      );
-      System.out.println("Attack not evaded, full damage done");
-      System.out.println("Damage Done:" + damage);
-      System.out.println("current hp: " + this.currentHp);
-
-    }
-  }
-
   public void increaseStarsBy(final int amount) {
     stars += amount;
+  }
+  public void decreaseStarsBy(final int amount){
+    stars -= amount;
   }
 
   public void reduceStarsBy(final int amount) {

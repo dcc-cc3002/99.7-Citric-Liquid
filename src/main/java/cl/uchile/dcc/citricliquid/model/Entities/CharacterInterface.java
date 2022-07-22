@@ -40,18 +40,12 @@ public interface CharacterInterface {
   int rollDef();
 
   /**
-   * Method that handles the defense from an attack.
-   *
-   * @param enemy is the source of the attack.
+   * rolls a die to get the new EVD.
+   * @return the temp EVD.
    */
-  void defend(Character enemy);
+  int rollEvd();
 
-  /**
-   * Method that handles the evasion from an attack.
-   *
-   * @param enemy is the source of the attack.
-   */
-  void evade(Character enemy);
+
 
   /**
    * boolean that returns true if an entity or a player is dead.

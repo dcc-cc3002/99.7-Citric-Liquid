@@ -21,10 +21,15 @@ public class BossPanel extends Panel {
     this.active = active;
   }
 
+  public boolean isActive(){
+    return this.active;
+  }
+
 
   public void setActive() {
     this.active = true;
   }
+
   /**
    * Sets the chain of events if a player falls in a boss panel.
    * If someone is level>=4, the boss panel is active. It will spawn a boss.

@@ -32,6 +32,8 @@ public abstract class Panel implements PanelInterface {
   private Player player1;
 
   private Player player2;
+
+
   private Player player_home;
 
 
@@ -58,7 +60,9 @@ public abstract class Panel implements PanelInterface {
    */
 
   public void setPlayerHome(Player player) {
-    this.player_home = player;
+    if (player_home==null){
+      this.player_home = player;
+    }
   }
 
   public Player getPlayer_home() {
@@ -242,13 +246,15 @@ public abstract class Panel implements PanelInterface {
 
   }
 
-  /**
-   * Sets the chain of events if there is a player in the panel.
-   *
-   * @param player1 player 1
-   * @param player2 player 2
-   */
-  public void setBattleAgainstPlayer(@NotNull Player player1, @NotNull Player player2) {
+
+  public void setBattleAgainstPlayer(Player player) {
+    if (player==player1){
+
+    }
+    if (player==player2){
+
+    }
+
     System.out.println("A battle has begun between "
             + player1.getName() + " and " + player2.getName());
   }
@@ -312,5 +318,11 @@ public abstract class Panel implements PanelInterface {
   /**
    * Activates a boss panel
    */
-  public void setActive() {}
+  public void setActive() {
+  }
+
+
+  public boolean isHomePanel(Player player) {
+    return (this.getType() == PanelType.HOME) && (this.player_home.equals(player));
+  }
 }

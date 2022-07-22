@@ -42,13 +42,6 @@ public interface PanelInterface {
    */
   int[] getPanelLocation();
 
-  /**
-   * Set the chain of events if a player falls in a panel which has a player already.
-   *
-   * @param player1 player 1
-   * @param player2 player 2
-   */
-  void setBattleAgainstPlayer(Player player1, Player player2);
 
   /**
    * Gets the panel type of the panel.
