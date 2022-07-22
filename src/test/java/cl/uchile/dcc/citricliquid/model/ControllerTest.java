@@ -191,6 +191,7 @@ public class ControllerTest {
 
   @Test
   public void move1spaceTest(){
+    //The movements has already been tested in tarea1.
     Panel[] panels = new Panel[]{testBonusPanel, testBonusPanel1, testBossPanel,
             testDropPanel, testEncounterPanel,
             testNeutralPanel, testHomePanel, testNeutralPanel1, testDrawPanel};
@@ -203,6 +204,23 @@ public class ControllerTest {
     controller.move1Space(player,"right");
     Assertions.assertEquals(player.getPlayerPanel(),testBossPanel);
   }
+  @Test
+  public void checkGetters(){
+    Player player = controller.getPlayer1();
+    player.setNormaLevel(1);
+    Assertions.assertEquals(player.getAtk(),controller.getCharacterATK(player));
+    Assertions.assertEquals(player.getDef(),controller.getCharacterDEF(player));
+    Assertions.assertEquals(player.getCurrentHp(),controller.getCharacterHp(player));
+    Assertions.assertEquals(player.getEvd(),controller.getCharacterEVD(player));
+    Assertions.assertEquals(player.getNormaLevel(),controller.getPlayerNorma(player));
+    Assertions.assertEquals(player.getStars(),controller.getCharacterStars(player));
+    Assertions.assertEquals(player.getName(),controller.getCharacterName(player));
+
+
+
+  }
+
+
 
 
 

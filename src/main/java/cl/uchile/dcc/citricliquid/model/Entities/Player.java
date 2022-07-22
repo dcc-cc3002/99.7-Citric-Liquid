@@ -286,6 +286,8 @@ public class Player extends Character {
 
   }
 
+
+
   public void normaClear() {
     this.normaLevel++;
   }

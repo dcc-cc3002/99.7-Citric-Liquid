@@ -1,5 +1,6 @@
 package cl.uchile.dcc.citricliquid.model.Handlers;
 
+import cl.uchile.dcc.citricliquid.States.IdleState;
 import cl.uchile.dcc.citricliquid.model.Entities.BossUnit.BossUnit;
 import cl.uchile.dcc.citricliquid.model.Entities.BossUnit.FlyingCastle;
 import cl.uchile.dcc.citricliquid.model.Entities.BossUnit.ShifuRobot;
@@ -139,9 +140,7 @@ public class Controller{
   public String getCharacterName(@NotNull Character character){
     return character.getName();
   }
-  public int getCharacterRoll(@NotNull Character character){
-    return character.roll();
-  }
+
 
   public boolean isCharacterKo(@NotNull Character character){
     return character.isKo();
@@ -181,11 +180,14 @@ public class Controller{
 
   /////////////////////////SETTERS//////////////////////////////
   /**
-   * Sets the turn for the player.
+   * Sets the turn for the player. If the player is recovering after the recovery check, he will not play the turn.
    * @param player who is going to play
    */
   public void setTurn(Player player){
-    playerTurn = player;
+    recover(player);
+    if (player.isRecovering()==false){
+      playerTurn = player;
+    }
   }
   /**
    * Sets up the panels in the game
@@ -327,11 +329,10 @@ public class Controller{
     int[] direction = dirToArray(dir);
     player.move1space(this.BoardPanels,direction);
   }
-  /**
-   * Now we need to set up the game flow.
-   *
-   */
 
+  /**
+   * Activate all boss panels if a character arrives to norma level 4.
+   */
   public void ActivateBossPanel(){
     Panel[] panels=this.getBoardPanels();
     for (Panel panel:panels){
@@ -341,11 +342,46 @@ public class Controller{
     }
   }
 
-  public void checkForEnemies(){
-
+  /**
+   * Checks for enemies.
+   * @param player
+   * @return
+   */
+  public boolean checkForEnemies(@NotNull Player player){
+    return player.checksForEnemyPlayer();
   }
 
+  /**
+   * Attacks a character.
+   * @param player
+   * @param enemy
+   */
+  public void attackCharacter(Player player,Character enemy){
+    if (playerTurn==player){
+      player.attack(enemy);
+    }
+  }
 
+  /**
+   * Recovers a player if it can.
+   * @param player
+   */
+  public void recover(@NotNull Player player){
+    if (player.isRecovering()){
+      if (player.roll()>=Math.max(6-this.getChapter(),0)){
+        player.ChangeState(new IdleState());
+      }
+    }
+  }
+
+  /**
+   * This function runs the entire game. Sadly, i dont know how to test it because it needs inputs.
+   * @param Player1
+   * @param Player2
+   * @param Player3
+   * @param Player4
+   * @param panels of the game.
+   */
   public void game(Player Player1, Player Player2, Player Player3, Player Player4, Panel[] panels){
     /////////////SETUP OF THE GAME//////////////////
     player1=Player1;
@@ -362,16 +398,16 @@ public class Controller{
     while (this.winner==null){
 
       if (getTurns()==1){
-        playerTurn=player1;
+        setTurn(player1);
       }
       if (getTurns()==2){
-        playerTurn=player2;
+        setTurn(player2);
       }
       if (getTurns()==3){
-        playerTurn=player3;
+        setTurn(player3);
       }
       if (getTurns()==4){
-        playerTurn=player4;
+        setTurn(player4);
       }
       if (playerTurn.isKo()){
         //The player is KO, later we are taking care of this case.
@@ -431,14 +467,4 @@ public class Controller{
     }
     System.out.println("Game have ended");
   }
-
-
-
-
-
-
-
-
-
-
 }

@@ -181,4 +181,5 @@ public abstract class Character implements CharacterInterface {
     return this.evd;
   }
 
+
 }

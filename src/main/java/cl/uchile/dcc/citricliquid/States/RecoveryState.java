@@ -10,10 +10,7 @@ public class RecoveryState extends State{
   public void setCharacter(Character character) {
     this.character=character;
   }
-  public void recover(@NotNull Character character, Controller controller){
-    int roll = character.roll();
 
-  }
   public boolean isRecovering(){
     return true;
   }
