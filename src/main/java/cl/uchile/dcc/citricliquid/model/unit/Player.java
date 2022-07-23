@@ -18,6 +18,7 @@ public class Player extends AbstractUnit implements Unit{
   private NormaGoal normaGoal;
   private Panel currentPanel;
   private Panel homePanel;
+  public boolean isRec;
   public boolean isAtk;
 
 
@@ -40,6 +41,7 @@ public class Player extends AbstractUnit implements Unit{
     super(name, hp, atk, def, evd);
     normaLevel = 1;
     isAtk = false;
+    isRec = false;
   }
 
   /**

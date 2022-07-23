@@ -1,5 +1,6 @@
 package cl.uchile.dcc.citricliquid.model;
 
+
 /**
  * Enumeration representing the possible types of goals to level up a norma.
  *

@@ -15,6 +15,7 @@ public interface Unit {
     void defend(int attack);
     void SetSeed(long l);
     boolean isKO();
+    boolean getBattleDecide();
 
     void increaseWinsByPlayer(Player player);
     void increaseStarsByPlayer(Player player);

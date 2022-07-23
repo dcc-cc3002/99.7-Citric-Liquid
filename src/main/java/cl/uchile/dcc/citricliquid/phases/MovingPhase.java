@@ -26,4 +26,9 @@ public class MovingPhase extends Phase{
     public void setController(GameController controller) {
         super.setController(controller);
     }
+
+    @Override
+    public void changePhase(Phase phase) {
+        super.changePhase(phase);
+    }
 }

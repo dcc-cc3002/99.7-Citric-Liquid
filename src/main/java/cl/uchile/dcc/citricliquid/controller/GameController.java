@@ -1,6 +1,7 @@
 package cl.uchile.dcc.citricliquid.controller;
 
 import cl.uchile.dcc.citricliquid.model.NormaGoal;
+import cl.uchile.dcc.citricliquid.model.unit.Unit;
 import cl.uchile.dcc.citricliquid.phases.Phase;
 import cl.uchile.dcc.citricliquid.model.board.*;
 import cl.uchile.dcc.citricliquid.model.unit.BossUnit;
@@ -153,38 +154,104 @@ public class GameController {
         return player;
     }
 
+    /**
+     * Sets this player's home panel.
+     *
+     * @param player is the player.
+     *
+     * @param homePanel is the player's new home panel.
+     */
     public void setHomePanel(Player player, HomePanel homePanel) {player.setHomePanel(homePanel);}
 
+    /**
+     * Sets the panel in which this player is on.
+     *
+     * @param player is the player.
+     *
+     * @param panel is the player's new place.
+     */
     public void setCurrentPanel(Player player, Panel panel) {
         player.getPanel().getPlayers().remove(player);
         panel.addPlayer(player);
         player.setCurrentPanel(panel);
     }
 
+    /**
+     * Returns the current turn's owner.
+     */
     public Player getTurnOwner() {
         Player owner = playerList.get((turn - 1) % playerList.size());
         return owner;
     }
 
+    /**
+     * Sets this game's norma goal.
+     *
+     * @param goal is the game's goal to win.
+     */
     public void setNormaGoal(NormaGoal goal) { getTurnOwner().setNormaGoal(goal);}
 
-
+    /**
+     * Annexes a panel to the specified one.
+     * @param next is the annexed panel.
+     */
     public void addNextPanel(Panel current, Panel next) {
         current.addNextPanel(next);
     }
 
+    /**
+     * Returns the game's panel list.
+     */
     public List<Panel> getPanelList(){ return panelList; }
 
+    /**
+     * Returns the current chapter in which the game is in.
+     */
     public int getChapter() { return chapter; }
 
+    /**
+     * Changes the current phase of the game.
+     */
     public void changePhase(Phase newPhase){
         this.phase = newPhase;
     }
 
-    public void battlePvP(Player player_1,Player player_2) {
-
+    /**
+     * Returns the current phase in which the game is in.
+     */
+    public Phase getPhase() {
+        return phase;
     }
 
+    /**
+     * The unit performs the action of defending.
+     */
+    public void defend(Unit unit, int atk) {
+        unit.defend(atk);
+    }
 
+    /**
+     * The unit performs the action of evading.
+     */
+    public void evade(Unit unit, int atk) {
+        unit.evade(atk);
+    }
 
+    /**
+     * Initiates a battle
+     *
+     * @param attacker is the unit that initiates the battle.
+     *
+     * @param rival is the unit that has to answer to the attack.
+     */
+    public void battle(Unit attacker, Unit rival) {
+        int atk_1 = attacker.attack();
+        if(rival.getBattleDecide()) {
+            defend(rival, atk_1);
+        }
+
+        if (!rival.getBattleDecide()) {
+            evade(rival, atk_1);
+        }
+    }
 }

@@ -21,10 +21,6 @@ public class Battle extends Phase {
         this.battle = true;
     }
 
-    public void battlePvP(Player player_1, Player player_2) {
-        attacker = player_1;
-        rival = player_2;
-    }
 
     @Override
     public String toString() {
@@ -34,5 +30,15 @@ public class Battle extends Phase {
     @Override
     public void setController(GameController controller) {
         super.setController(controller);
+    }
+
+    @Override
+    public void changePhase(Phase phase) {
+        super.changePhase(phase);
+    }
+
+    public void battle(Unit attacker, Unit rival) {
+        GameController control = super.controller;
+        control.battle(attacker, rival);
     }
 }

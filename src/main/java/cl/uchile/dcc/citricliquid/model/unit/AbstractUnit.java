@@ -12,6 +12,7 @@ public abstract class AbstractUnit implements Unit {
     private int stars;
     private int currentHp;
     private int wins;
+    private boolean battleDecide;
 
     /**
      * Creates a new character.
@@ -163,6 +164,25 @@ public abstract class AbstractUnit implements Unit {
         this.setCurrentHp(this.getCurrentHp() - damage);
     }
 
+    /**
+     * Sets this unit's decision in battle
+     * @param action represents defend or evade
+     *               defend: true
+     *               evade: false
+     */
+    public void setBattleDecide(boolean action) {
+        battleDecide = action;
+    }
+
+    /**
+     * Returns this unit's decision in battle
+     * @return is the decision, being true in the case of defend,
+     * and false if the choice is to evade.
+     */
+
+    public boolean getBattleDecide() {
+        return battleDecide;
+    }
     /**
      * Performs the action of evading.
      */

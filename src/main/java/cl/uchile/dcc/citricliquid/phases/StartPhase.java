@@ -17,6 +17,7 @@ public class StartPhase extends Phase{
                 this.battle = false;
         }
 
+
         @Override
         public String toString() {
                 return "StartPhase";
@@ -25,5 +26,10 @@ public class StartPhase extends Phase{
         @Override
         public void setController(GameController controller) {
                 super.setController(controller);
+        }
+
+        @Override
+        public void changePhase(Phase phase) {
+                super.changePhase(phase);
         }
 }

@@ -7,4 +7,14 @@ The project consists in creating a (simplified) clone of the game **100% Orange 
 developed by [Orange_Juice](http://daidai.moo.jp) and distributed by 
 [Fruitbat Factory](https://fruitbatfactory.com).
 
+The implementation of this game consists principally on a state pattern, in which the mediator checks through 
+the conditions in the phases, to then make the controller implement them in the game.
 
+**To Run the game:**
+For the moment, the game hasn't been implemented in its totality, so, the way to test the methods would be by running
+the following tests: *ControllerTest*, *PanelTest*, *BossUnitTest*, *PlayerTest*, *WildUnitTest* and *PhaseTest*.
+
+*MediatorTest* hasn't been implemented.
+
+The battle process hasn't been completely implemented 
+(the first answer to the initial attack has been implemented.)

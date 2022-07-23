@@ -4,6 +4,7 @@ import cl.uchile.dcc.citricliquid.controller.GameController;
 
 public class RecoveryPhase extends Phase{
 
+
     public RecoveryPhase() {
         this.canStart = true;
         this.canMove = false;
@@ -25,5 +26,14 @@ public class RecoveryPhase extends Phase{
     @Override
     public void setController(GameController controller) {
         super.setController(controller);
+    }
+
+    @Override
+    public void changePhase(Phase phase) {
+        super.changePhase(phase);
+    }
+
+    public void toStart() {
+
     }
 }

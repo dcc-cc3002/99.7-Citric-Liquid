@@ -2,7 +2,7 @@ package cl.uchile.dcc.citricliquid.phases;
 
 import cl.uchile.dcc.citricliquid.controller.GameController;
 
-public class WaitHome extends Phase{
+public class WaitHome extends Phase {
 
     public WaitHome() {
         this.canStart = false;
@@ -25,5 +25,10 @@ public class WaitHome extends Phase{
     @Override
     public void setController(GameController controller) {
         super.setController(controller);
+    }
+
+    @Override
+    public void changePhase(Phase phase) {
+        super.changePhase(phase);
     }
 }
