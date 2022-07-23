@@ -11,3 +11,11 @@ Every boss/wild unit has a concrete class.
 
 
 2-. Panel Inteface handles the panel abstract class. Every type of panel is a son of Panel.
+
+
+3-. States.
+All players begin in IDLE STATE. If a combat triggers, it will change states according to the 
+state diagram. 
+
+4-. Observer.
+I have implementes a way to check for norma 4 and norma 6 with an observer pattern.

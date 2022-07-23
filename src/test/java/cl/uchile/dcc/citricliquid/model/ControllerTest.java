@@ -216,16 +216,9 @@ public class ControllerTest {
     Assertions.assertEquals(player.getStars(),controller.getCharacterStars(player));
     Assertions.assertEquals(player.getName(),controller.getCharacterName(player));
 
-
+  }
+  @Test
+  public void testActivatedBy(){
 
   }
-
-
-
-
-
-
-
-
-
 }

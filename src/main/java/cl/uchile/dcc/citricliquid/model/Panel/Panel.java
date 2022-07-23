@@ -243,7 +243,7 @@ public abstract class Panel implements PanelInterface {
             +
             player.getName() + " and " + enemy.getName());
 
-
+    player.attack(enemy);
   }
 
 
@@ -257,6 +257,7 @@ public abstract class Panel implements PanelInterface {
 
     System.out.println("A battle has begun between "
             + player1.getName() + " and " + player2.getName());
+    player.attack(player2);
   }
 
   /**

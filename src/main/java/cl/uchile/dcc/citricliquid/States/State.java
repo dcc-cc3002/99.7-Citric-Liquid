@@ -46,3 +46,18 @@ public abstract class  State {
     return false;
   }
 }
+
+
+/**
+ * La idea de los estados es la siguiente.
+ * Todos los jugadores comienzan en estado IDLE.
+ * Luego, si atacan a otro jugador, el que ataca pasa a AttackingPlayer1
+ * Esta clase llama a attack y eso hace que el enemigo pase a estado AttackedPlayer2
+ * Luego, el estado AttackedPlayer2State tiene la funcion para defenderse. Dependendiendo
+ * de lo que quiera el jugador, el enemigo pasara a DefendingPlayer2 o a EvadingPlayer2
+ * Posteriormente, si el enemigo sigue vivo atacará al player y sigue lo mismo. Si no sigue vivo, el player pasa a IDLE
+ * y el enemigo pasa a RECOVERY.
+ * El enemigo pasa a AttackingPlayer2 y esa clase hace que el player pase a AttackedPlayer1.
+ * El player se defiende y por ello pasa a EvadingPlayer1 o DefendingPlayer1.
+ * Si sigue vivo pasa a idle y si muere a recovery. El enemigo siempre pasa a idle.
+ */

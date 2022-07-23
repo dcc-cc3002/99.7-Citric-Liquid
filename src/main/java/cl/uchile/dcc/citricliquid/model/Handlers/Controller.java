@@ -374,6 +374,11 @@ public class Controller{
     }
   }
 
+
+  public void ActivatePanelAfterMove(@NotNull Player player){
+    Panel panel=player.getPlayerPanel();
+    panel.activatedBy(player);
+  }
   /**
    * This function runs the entire game. Sadly, i dont know how to test it because it needs inputs.
    * @param Player1
