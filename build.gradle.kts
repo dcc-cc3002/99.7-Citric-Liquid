@@ -32,7 +32,9 @@ dependencies {
   implementation(group = "org.openjfx", name = "javafx", version = "18.0.1")
   implementation(group = "org.jetbrains", name = "annotations", version = annotationVersion)
   implementation(group = "org.controlsfx", name = "controlsfx", version = controlsfxVersion)
-  testImplementation(
+    implementation("junit:junit:4.13.1")
+    implementation("junit:junit:4.13.1")
+    testImplementation(
     group = "org.junit.jupiter", name = "junit-jupiter-api", version = junitVersion
   )
   testRuntimeOnly(
