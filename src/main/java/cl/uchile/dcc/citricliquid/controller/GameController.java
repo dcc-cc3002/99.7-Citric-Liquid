@@ -16,7 +16,10 @@ public class GameController {
     private final List<Panel> panelList;
     private int turn;
     private int chapter;
+    private boolean bosses;
+    private boolean over;
     private Phase phase;
+    private  Player winner;
 
     public GameController() {
         playerList = new ArrayList<>();
@@ -24,6 +27,9 @@ public class GameController {
         turn = 1;
         chapter = 1;
         phase = new Phase();
+        winner = null;
+        bosses = false;
+        over = false;
     }
 
     /**
@@ -253,5 +259,25 @@ public class GameController {
         if (!rival.getBattleDecide()) {
             evade(rival, atk_1);
         }
+    }
+
+    /**
+     * Sets the winner if norma 6 reached
+     */
+    public void onNormaLevel(int lvl) {
+        if (lvl == 4 && !bosses){
+            bosses = true;
+        }
+        if (lvl == 6){
+            winner = getTurnOwner();
+            over = true;
+        }
+    }
+
+    /**
+     * Returns game winner
+     */
+    public Player getWinner(){
+        return winner;
     }
 }

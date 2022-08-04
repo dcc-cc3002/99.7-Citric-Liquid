@@ -2,7 +2,7 @@ package cl.uchile.dcc.citricliquid.model.board;
 
 import cl.uchile.dcc.citricliquid.model.unit.*;
 
-public class HomePanel extends AbstractPanel{
+public class HomePanel extends AbstractPanel implements Panel{
     /**
      * Creates a new panel.
      *
