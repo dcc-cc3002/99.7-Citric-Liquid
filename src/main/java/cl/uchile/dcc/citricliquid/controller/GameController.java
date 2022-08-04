@@ -2,6 +2,7 @@ package cl.uchile.dcc.citricliquid.controller;
 
 import cl.uchile.dcc.citricliquid.model.NormaGoal;
 import cl.uchile.dcc.citricliquid.model.unit.Unit;
+import cl.uchile.dcc.citricliquid.phases.MovingPhase;
 import cl.uchile.dcc.citricliquid.phases.Phase;
 import cl.uchile.dcc.citricliquid.model.board.*;
 import cl.uchile.dcc.citricliquid.model.unit.BossUnit;
@@ -24,7 +25,7 @@ public class GameController {
     public GameController() {
         playerList = new ArrayList<>();
         panelList = new ArrayList<>();
-        turn = 1;
+        turn = 0;
         chapter = 1;
         phase = new Phase();
         winner = null;
@@ -177,7 +178,9 @@ public class GameController {
      * @param panel is the player's new place.
      */
     public void setCurrentPanel(Player player, Panel panel) {
-        player.getPanel().getPlayers().remove(player);
+        if (player.getPanel() != null) {
+            player.getPanel().getPlayers().remove(player);
+        }
         panel.addPlayer(player);
         player.setCurrentPanel(panel);
     }
@@ -186,8 +189,73 @@ public class GameController {
      * Returns the current turn's owner.
      */
     public Player getTurnOwner() {
-        Player owner = playerList.get((turn - 1) % playerList.size());
+        Player owner = playerList.get(turn % playerList.size());
         return owner;
+    }
+
+    /**
+     * Goes to next turn
+     */
+    public void endTurn() {
+        this.turn = (turn + 1) % playerList.size();
+        if (turn == 0) nextChapter();
+    }
+
+    /**
+     * Changes the chapter
+     */
+    public void nextChapter() {
+        this.chapter += 1;
+    }
+
+    /**
+     * Returns current panel
+     */
+    public Panel getCurrentPanel(){
+        return getTurnOwner().getPanel();
+    }
+
+    /**
+     * Sets a panel as another's next panel
+     */
+    public void setNextPanel(Panel panel, Panel next) {
+        panel.addNextPanel(next);
+    }
+
+    /**
+     * Roll and move the player
+     */
+    public void move() {
+        System.out.println("Moving");
+        changePhase(new MovingPhase());
+        Player player = getTurnOwner();
+        int roll = player.roll();
+        Panel panel = getCurrentPanel();
+        while (roll != 0) {
+
+            if (panel.equals(player.getHomePanel())) {
+                System.out.println("Home");
+                panel.activatedBy(player);
+                break;
+            }
+            if (panel.getNextPanels().isEmpty()) {
+                break;
+            }
+
+            if (panel.getNextPanels().size() > 1) {
+                break;
+            }
+
+            if (panel.getPlayers().size() > 1) {
+                break;
+            }
+            else {
+                panel = getTurnOwner().getPanel().getNextPanels().iterator().next();
+                setCurrentPanel(getTurnOwner(), panel);
+                roll = roll - 1;
+            }
+        }
+        panel.activatedBy(player);
     }
 
     /**

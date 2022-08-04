@@ -5,7 +5,7 @@ import cl.uchile.dcc.citricliquid.model.board.Panel;
 
 import java.util.List;
 
-/**
+/**f
  * This class represents a player in the game 99.7% Citric Liquid.
  *
  * @author <a href="mailto:ignacio.slater@ug.uchile.cl">Ignacio Slater
@@ -42,6 +42,7 @@ public class Player extends AbstractUnit implements Unit{
     normaLevel = 1;
     isAtk = false;
     isRec = false;
+    normaGoal = NormaGoal.STARS;
   }
 
   /**
@@ -212,16 +213,17 @@ public class Player extends AbstractUnit implements Unit{
   }
 
   /**
-   * Returns the player's home panel.
-   */
-  public Panel getHomePanel() { return homePanel; }
-
-  /**
    * Sets this player's home panel.
    */
   public void setHomePanel(Panel newHome) {
+    System.out.println("Cambiando homepanel a "+newHome);
     homePanel = newHome;
   }
+
+  /**
+   * Returns the player's home panel.
+   */
+  public Panel getHomePanel() { return homePanel; }
 
   /**
    * Returns a copy of this character.

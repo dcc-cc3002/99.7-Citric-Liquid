@@ -28,7 +28,7 @@ class MediatorTest {
     private final Random random = new Random();
     private Mediator mediator;
     private List<Function<Integer, Mediator.MediatorPanel<?>>> panelSuppliers;
-    private List<Mediator.MediatorPlayer<Player>> testPlayers;
+    private List<Mediator.MediatorPlayer<?>> testPlayers;
     private List<Mediator.MediatorWildUnit<?>> testWildUnits;
     private List<Mediator.MediatorBoss<?>> testBosses;
 
@@ -148,11 +148,11 @@ class MediatorTest {
 
     @Test
     public void testMeetPlayer() {
-        var panels = new Mediator.MediatorPanel<Panel>[]{
+        var panels = new Mediator.MediatorPanel<?>[]{
                 panelSuppliers.get(random.nextInt(panelSuppliers.size())).apply(1),
                 panelSuppliers.get(random.nextInt(panelSuppliers.size())).apply(2)};
         mediator.setNextPanel(panels[0], panels[1]);
-        var players = new Mediator.MediatorPlayer<Player>[]{
+        var players = new Mediator.MediatorPlayer<?>[]{
                 mediator.createPlayer(panels[0], testPlayers.get(0)).getFirst(),
                 mediator.createPlayer(panels[1], testPlayers.get(1)).getFirst()};
         assertEquals(1, panels[0].getPlayers().size());

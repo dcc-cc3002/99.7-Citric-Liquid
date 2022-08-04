@@ -109,7 +109,8 @@ public abstract class AbstractPanel implements Panel{
    * @param panel the panel to be added.
    */
   public void addNextPanel(final Panel panel) {
-    nextPanels.add(panel);
+    if(!panel.equals(this))
+      nextPanels.add(panel);
   }
 
   /**
